@@ -1,11 +1,30 @@
 var express = require('express');
 var firebase = require("firebase");
 var router = express.Router();
+var mealsJSON = require('../seedData/seedMeals.json')
 
 firebase.initializeApp({
   databaseURL: "https://localtables-28928.firebaseio.com",
   serviceAccount: "/Users/hansonzihanzeng/Desktop/67-475\ Innovation\ in\ Information\ Systems/localtables-5dd14e3ea0e3.json"
 });
+var db = firebase.database()
+var mealsRef = db.ref("meals/");
+
+//Adding seed data into the database
+// for(var i=0; i<mealsJSON.length; i++){
+// 	var obj = mealsJSON[i];
+// 	mealsRef.push(obj);
+// }
+
+//retrieving data test
+mealsRef.orderByChild("Price").equalTo(5.00).on("value", function(snapshot){
+  console.log(snapshot);
+});
+
+// mealsRef.on("value", function(dataSnapShot){
+// 	var meals = dataSnapShot.val();
+// 	console.log(meals);
+// });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
