@@ -16,9 +16,8 @@ var mealsRef = db.ref("meals/");
 // 	mealsRef.push(obj);
 // }
 
-//retrieving data test
-mealsRef.orderByChild("Price").equalTo(5.00).on("value", function(snapshot){
-  console.log(snapshot);
+mealsRef.on("chil",function(dataSnapShot){
+	console.log(dataSnapShot.val());
 });
 
 // mealsRef.on("value", function(dataSnapShot){
@@ -35,8 +34,9 @@ router.get('/', function(req, res, next) {
 
 router.put('/:collection',function(req,res){
 	console.log('created the meal');
+	mealsRef.push('The meal JSON');
 	res.render('layout', { title: 'Our meals created!' });
-}); // CRUD Create
+});
 
 router.post('/:collection',function(req,res){
 	console.log('updated the meal');
