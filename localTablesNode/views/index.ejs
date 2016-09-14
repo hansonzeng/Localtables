@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LocalTables Auth</title>
+    <link href="stylesheets/auth.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="container">
+      <h3>LocalTables</h3>
+      <p>Travel anywhere. Eat Local!</p>
+      <div id="loading">Loading...</div>
+      <div id="loaded" class="hidden">
+        <div id="main">
+          <div id="user-signed-in" class="hidden">
+            <div id="user-info">
+              <div id="photo-container">
+                <img id="photo"></img>
+              </div>
+              <div id="name"></div>
+              <div id="email"></div>
+              <div class="clearfix"></div>
+            </div>
+            <p>
+              <button id="sign-out">Sign Out</button>
+              <button id="delete-account">Delete account</button>
+            </p>
+          </div>
+          <div id="user-signed-out">
+          </div>
+ <!--            <p>
+              <button id="sign-in-with-redirect">Sign In with Redirect</button>
+              <button id="sign-in-with-popup">Sign In with Popup</button>
+            </p> -->
+            <div id="firebaseui-spa">
+              <h5>Welcome! Please Sign In</h5>
+              <div id="firebaseui-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
+        authDomain: "localtables-28928.firebaseapp.com",
+        databaseURL: "https://localtables-28928.firebaseio.com",
+        storageBucket: "localtables-28928.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="javascripts/auth.js"></script>
+  </body>
+</html>

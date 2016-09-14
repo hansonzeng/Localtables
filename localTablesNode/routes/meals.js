@@ -16,9 +16,9 @@ var mealsRef = db.ref("meals/");
 // 	mealsRef.push(obj);
 // }
 
-mealsRef.on("chil",function(dataSnapShot){
-	console.log(dataSnapShot.val());
-});
+// mealsRef.on("chil",function(dataSnapShot){
+// 	console.log(dataSnapShot.val());
+// });
 
 // mealsRef.on("value", function(dataSnapShot){
 // 	var meals = dataSnapShot.val();
