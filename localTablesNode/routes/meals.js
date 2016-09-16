@@ -5,7 +5,7 @@ var mealsJSON = require('../seedData/seedMeals.json')
 
 firebase.initializeApp({
   databaseURL: "https://localtables-28928.firebaseio.com",
-  serviceAccount: "/Users/hansonzihanzeng/Desktop/67-475\ Innovation\ in\ Information\ Systems/localtables-5dd14e3ea0e3.json"
+  serviceAccount: "../localtables-5dd14e3ea0e3.json"
 });
 var db = firebase.database()
 var mealsRef = db.ref("meals/");
@@ -17,9 +17,9 @@ var mealsRef = db.ref("meals/");
 // }
 
 //retrieving data test
-mealsRef.orderByChild("Price").equalTo(5.00).on("value", function(snapshot){
-  console.log(snapshot);
-});
+// mealsRef.orderByChild("Price").equalTo(5.00).on("value", function(snapshot){
+//   console.log(snapshot);
+// });
 
 // mealsRef.on("value", function(dataSnapShot){
 // 	var meals = dataSnapShot.val();
