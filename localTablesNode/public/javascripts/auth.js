@@ -59,8 +59,8 @@ var signInWithPopup = function() {
 var handleSignedInUser = function(user) {
   currentUid = user.uid;
   document.getElementById('user-signed-in').style.display = 'block';
+  document.getElementById('buttons-signed-in-meals').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
-  document.getElementById('firebaseui-spa').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
   if (user.photoURL){
@@ -96,16 +96,13 @@ firebase.auth().onAuthStateChanged(function(user) {
   user ? handleSignedInUser(user) : handleSignedOutUser();
 });
 
-
 /**
  * Initializes the app.
  */
 var initApp = function() {
-  // document.getElementById('sign-in-with-redirect').addEventListener(
-  //     'click', signInWithRedirect);
-  // document.getElementById('sign-in-with-popup').addEventListener(
-  //     'click', signInWithPopup);
+
   document.getElementById('sign-out').addEventListener('click', function() {
+    console.log("current user logged out is " + firebase.auth().uid);
     firebase.auth().signOut();
   });
   document.getElementById('delete-account').addEventListener(

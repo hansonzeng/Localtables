@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>LocalTables Auth</title>
     <link href="stylesheets/auth.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,12 +30,17 @@
               <button id="delete-account">Delete account</button>
             </p>
           </div>
-          <div id="user-signed-out">
+          <div id="user-signed-out" class="hidden">
           </div>
- <!--            <p>
-              <button id="sign-in-with-redirect">Sign In with Redirect</button>
-              <button id="sign-in-with-popup">Sign In with Popup</button>
-            </p> -->
+          <div id="buttons-signed-in-meals" class="hidden">
+            <p>
+              <button id="put-meals">Testing Ajax Put</button>
+              <button id="get-meals">Testing Ajax Get</button>
+              <button id="post-meals">Testing Ajax Post</button>
+              <button id="delete-meals">Testing Ajax Delete</button>
+             <!--  <button id="sign-in-with-popup">Sign In with Popup</button> -->
+            </p>
+          </div>
             <div id="firebaseui-spa">
               <h5>Welcome! Please Sign In</h5>
               <div id="firebaseui-container"></div>
@@ -55,5 +61,6 @@
       firebase.initializeApp(config);
     </script>
     <script src="javascripts/auth.js"></script>
+    <script src="javascripts/meals.js"></script>
   </body>
 </html>
