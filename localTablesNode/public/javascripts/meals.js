@@ -63,15 +63,4 @@ var deleteMeals = function(){
     });
 }
 
-	//ONLY FOR TESTING PURPOSES CRUD FOR MEALS
-  document.getElementById('put-meals').addEventListener(
-      'click', putMeals);
-  document.getElementById('get-meals').addEventListener(
-      'click', getAllMeals);
-  document.getElementById('post-meals').addEventListener(
-      'click', postMeals);
-  document.getElementById('delete-meals').addEventListener(
-      'click', deleteMeals);
-
-
 });

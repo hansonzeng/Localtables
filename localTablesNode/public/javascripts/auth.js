@@ -57,12 +57,11 @@ var signInWithPopup = function() {
  * Displays the UI for a signed in user.
  */
 var handleSignedInUser = function(user) {
+  console.log("signed in");
   currentUid = user.uid;
-  document.getElementById('user-signed-in').style.display = 'block';
-  document.getElementById('buttons-signed-in-meals').style.display = 'block';
+  document.getElementById('user-signed-in').className = "";
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
-  document.getElementById('email').textContent = user.email;
   if (user.photoURL){
     document.getElementById('photo').src = user.photoURL;
     document.getElementById('photo').style.display = 'block';
@@ -89,10 +88,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   // automatically refreshed. In that case, the user hasn't changed so we should
   // not update the UI.
   if (user && user.uid == currentUid) {
+    console.log("entered");
     return;
   }
   document.getElementById('loading').style.display = 'none';
   document.getElementById('loaded').style.display = 'block';
+  document.getElementById('loaded').className = "";
   user ? handleSignedInUser(user) : handleSignedOutUser();
 });
 
@@ -102,13 +103,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 var initApp = function() {
 
   document.getElementById('sign-out').addEventListener('click', function() {
-    console.log("current user logged out is " + firebase.auth().uid);
+    console.log("current user logged out is " + firebase.auth().currentUser.uid);
     firebase.auth().signOut();
   });
-  document.getElementById('delete-account').addEventListener(
-      'click', function() {
-        firebase.auth().currentUser.delete();
-      });
 };
 
 window.addEventListener('load', initApp);
