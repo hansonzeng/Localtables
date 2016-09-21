@@ -6,6 +6,7 @@
 		"City" : "Pittsburgh",
 		"Street" : "4 Bayard Road"
 	},
+	"PartySize" : 5,
 	"Price" : 5.00,
 	"CookingLesson" : false
 	},
@@ -17,6 +18,7 @@
 		"City" : "Pittsburgh",
 		"Street" : "6 Bayard Road"
 	},
+	"PartySize" : 6,
 	"Price" : 10.00,
 	"CookingLesson" : false
 	},
@@ -28,6 +30,7 @@
 		"City" : "Pittsburgh",
 		"Street" : "5000 Forbes Ave"
 	},
+	"PartySize" : 5,
 	"Price" : 8.00,
 	"CookingLesson" : true
 	}

@@ -1,23 +1,7 @@
 var express = require('express');
-var firebase = require("firebase");
+var firebase = require("./firebase.js");
 var router = express.Router();
 var mealsJSON = require('../seedData/seedMeals.json')
-
-var config = {
-    apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
-    authDomain: "localtables-28928.firebaseapp.com",
-    databaseURL: "https://localtables-28928.firebaseio.com",
-    storageBucket: "localtables-28928.appspot.com",
-    messagingSenderId: "600385979986"
-  };
-
-//   {
-//   databaseURL: "https://localtables-28928.firebaseio.com",
-//   serviceAccount: "/Users/hansonzihanzeng/Desktop/67-475\ Innovation\ in\ Information\ Systems/localtables-5dd14e3ea0e3.json",
-//   storageBucket: "localtables-28928.appspot.com"
-// }
-
-firebase.initializeApp(config);
 
 //loading firebase instances
 var authData = firebase.auth();
@@ -26,49 +10,90 @@ var db = firebase.database();
 //creating firebase references
 var mealsRef = db.ref("meals/");
 
-//Adding seed data into the database
-// for(var i=0; i<mealsJSON.length; i++){
-// 	var obj = mealsJSON[i];
-// 	mealsRef.push(obj);
-// }
+// Adding seed data into the database
+var putSeedData = function(){
+	for(var i=0; i<mealsJSON.length; i++){
+	var obj = mealsJSON[i];
+	mealsRef.push(obj);
+	}
+}
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('layout', { title: 'Our meals YUM!' });
-});
-
-mealsRef.orderByChild("Price").on("value",function(dataSnapShot){
-	console.log(dataSnapShot.val());
-});
+//prints all the meals in console
+// mealsRef.orderByChild("Price").on("value",function(dataSnapShot){
+// 	console.log(dataSnapShot.val());
+// });
 
 /* CRUD meals into database. */
 
 router.put('/putMeal',function(req,res){
-	console.log(req.body);
-	console.log("req body is " + req.body.testMeal.Name);
 	console.log("the user is " + req.body.userID);
+
+	var key = mealsRef.push().key;
 	mealsRef.push(req.body.testMeal);
-	res.render('layout', { title: 'Our meals created!'});
+
+	//sends back unique Meal Key
+	res.contentType('json');
+  	res.send(JSON.stringify({uniqueKey: key}));
 }); //CREATE
 
-router.get('/getAllMeals',function(req,res){
-	console.log('getting all the meals');
-	mealsRef.on("value",function(dataSnapShot){
-		console.log(dataSnapShot.val());
-	});	
-	console.log("after mealsRef");
-	res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ a: 1 }));
-}); //RETRIEVE
+router.get('/getMeal/:mealID',function(req,res){	
+	console.log("The mealid is " + req.params.mealID);
+	var mealid = req.params.mealID;
+	var resultMeal;
 
-router.post('/:collection',function(req,res){
-	console.log('updated the meal');
-	res.render('layout', { title: 'Our meals updated!' });
+	var getMealRef = db.ref("meals/" + mealid);
+	getMealRef.on('value',function(snapshot){
+		resultMeal = snapshot.val();
+		console.log(snapshot.val());
+	});
+    res.send(resultMeal);
+}); //RETRIEVE Specific One
+
+router.get('/getAllMeals',function(req,res){	
+	console.log('getting all the meals');
+	var allMeals = [];
+	allMeals.push("foo");
+
+	mealsRef.on("value",function(dataSnapShot){
+		dataSnapShot.forEach(function(child){
+			console.log(child.val());
+			var oneMeal = child.val();
+			allMeals.push(oneMeal);
+		});
+	});	
+	
+	allMeals.forEach(function(obj){
+		console.log(obj);
+	});
+	// console.log("list of meals " + allMeals.length);
+    res.send(allMeals);
+}); //RETRIEVE ALL
+
+router.post('/postMeal',function(req,res){
+	console.log("the mealID is " + req.body.mealID);
+	console.log("the child edited is " + req.body.child);
+	console.log("the new value is " + req.body.newVal);
+
+	var mealid = req.body.mealID;
+	var children = req.body.child;
+	var value = req.body.newVal;
+
+	var obj = {};
+	obj[children] = value;
+
+	db.ref("meals/" + mealid).update(obj);
+
+	res.send("Updated the meals of interest")
 }); // UPDATE
 
-router.delete('/:collection',function(req,res){
+//delete meal and also delete user's meals related to it
+router.delete('/deleteMeal',function(req,res){
 	console.log('deleted the meal');
-	res.render('layout', { title: 'Our meals deleted!' });
+
+	var mealid = req.body.mealID
+	db.ref("meals/" + mealid).remove()
+
+	res.send("Deleted the meals of interest")
 }); //DELETE
 
 
