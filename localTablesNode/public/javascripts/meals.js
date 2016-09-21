@@ -6,15 +6,16 @@ var putMeals = function(){
   console.log("within the meals.js too!")
 
   var testMealData = {
-  "Name" : "Hawaii Cows",
-  "Description" : "The best cow",
+  "Name" : "Hawaii Pineapples",
+  "Description" : "The best pineapples",
   "Location" : {
     "State" : "BC",
     "City" : "Vancouver",
     "Street" : "Granville Street"
   },
   "Price" : 20.00,
-  "CookingLesson" : true
+  "CookingLesson" : true,
+  "Image" : "http://tinyurl.com/hyk4ae9"
   };
 
   var uniqueKey;
@@ -63,7 +64,7 @@ var getAllMeals = function(){
 
 var getMeal = function(){ 
 
-  var mealid = "-KS8UNcmhjFUY5eCfpp0";
+  var mealid = "-KS9dLGch6sDnyWgP4Kg";
   var meal;
 
     $.ajax({
@@ -82,9 +83,9 @@ var getMeal = function(){
 
 var postMeals = function(){
 
-  var mealid = "-KS8UNcmhjFUY5eCfpp0";
+  var mealid = "-KS9dLGch6sDnyWgP4Kg";
   var editField = "Price";
-  var newValue = 100;
+  var newValue = 75;
 
   console.log("Mealid is " + mealid);
 
@@ -121,7 +122,7 @@ var deleteMeals = function(){
   document.getElementById('put-meals').addEventListener(
       'click', putMeals);
   document.getElementById('get-meals').addEventListener(
-      'click', getAllMeals);
+      'click', getMeal);
   document.getElementById('post-meals').addEventListener(
       'click', postMeals);
   document.getElementById('delete-meals').addEventListener(

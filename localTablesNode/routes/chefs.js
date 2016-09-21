@@ -18,7 +18,14 @@ router.get('/getChef', function(req, res, next) {
 router.put('/putChef', function(req, res, next) {
 	var userid = req.body.userID;
 	var chef = req.body.chefData;
-	db.ref("chefs/" + userid).set(chef);
+	console.log("userid is " + userid);
+
+	// var obj = {};
+	// obj[userid] = chef;
+	// db.ref("chefs/").push().set(obj);
+
+	db.ref("chefs/" + userid).push(chef);
+
   	res.send('sent successful~');
 });
 

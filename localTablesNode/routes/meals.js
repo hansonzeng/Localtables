@@ -18,6 +18,8 @@ var putSeedData = function(){
 	}
 }
 
+putSeedData();
+
 //prints all the meals in console
 // mealsRef.orderByChild("Price").on("value",function(dataSnapShot){
 // 	console.log(dataSnapShot.val());
@@ -61,7 +63,7 @@ router.get('/getAllMeals',function(req,res){
 			allMeals.push(oneMeal);
 		});
 	});	
-	
+
 	allMeals.forEach(function(obj){
 		console.log(obj);
 	});

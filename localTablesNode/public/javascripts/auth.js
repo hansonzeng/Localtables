@@ -58,19 +58,47 @@ var signInWithPopup = function() {
  */
 var handleSignedInUser = function(user) {
   currentUid = user.uid;
-  var chefJSON = generateUserJson(user)
+  var db = firebase.database();
+  var chefsRef = db.ref("chefs/");
 
-  //put user into database, assume curently a chef~
-  $.ajax({
-      url: '/chefs/putChef',
-      type: 'PUT',
-      dataType: "json",
-      contentType: "application/json",
-      data: JSON.stringify({chefData: chefJSON, userID: currentUid}),
-      success:function(result){
-        alert(result);
+  var createNewChef = function(){
+    console.log("did I create new chef? Yes...")
+    var chefJSON = generateUserJson(user)
+    //put user into database, assume curently a chef~
+    $.ajax({
+        url: '/chefs/putChef',
+        type: 'PUT',
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({chefData: chefJSON, userID: currentUid}),
+        success:function(result){
+          alert(result);
+        }
+      });
+  };
+
+  var checkExistingChefs = function(chefsRef){
+    chefsRef.on("value",function(dataSnapShot){
+      console.log("datasnapshot name is " + dataSnapShot.val());
+      var flag = true;
+      dataSnapShot.forEach(function(data){
+        console.log("the snapshot is " + data);
+        console.log("the key is " + data.key);
+        console.log("the current Uid is " + currentUid);
+        console.log("the comparison boolean is" + (data.key === currentUid));
+        if(data.key === currentUid){
+          flag = false;
+        }
+      });
+      if(flag){
+          createNewChef();
       }
+      console.log("did I fail the check? yes...")
     });
+  };
+
+  checkExistingChefs(chefsRef);
+
 
   document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('buttons-signed-in-meals').style.display = 'block';
