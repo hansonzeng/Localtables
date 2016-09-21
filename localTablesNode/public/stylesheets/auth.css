@@ -18,8 +18,15 @@ body {
   display: none;
 }
 
+.firebaseui-idp-button {
+  border-radius: 20%;
+}
+
+#user-signed-in {
+  padding-top: 42%;
+}
+
 #user-info {
-  border: 1px solid #CCC;
   clear: both;
   margin: 0 auto 20px;
   max-width: 400px;
@@ -27,19 +34,22 @@ body {
   text-align: left;
 }
 
+#name {
+  font-size: 20px;
+}
+
 #photo-container {
   background-color: #EEE;
-  border: 1px solid #CCC;
   float: left;
-  height: 80px;
+  height: 40px;
   margin-right: 10px;
-  width: 80px;
+  width: 40px;
 }
 
 #photo {
-  height: 80px;
+  height: 40px;
   margin: 0;
-  width: 80px;
+  width: 40px;
 }
 
 @media (max-width: 300px) {
@@ -48,4 +58,8 @@ body {
     height: 40px;
     width: 40px;
   }
+}
+
+#firebaseui-container button {
+  border-radius: 20px;
 }

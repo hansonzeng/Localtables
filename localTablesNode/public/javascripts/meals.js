@@ -128,5 +128,4 @@ var deleteMeals = function(){
   document.getElementById('delete-meals').addEventListener(
       'click', deleteMeals);
 
-
 });
