@@ -6,57 +6,112 @@ var putMeals = function(){
   console.log("within the meals.js too!")
 
   var testMealData = {
-  "Name" : "Hawaii Cows",
-  "Description" : "The best cow",
+  "Name" : "Hawaii Pineapples",
+  "Description" : "The best pineapples",
   "Location" : {
     "State" : "BC",
     "City" : "Vancouver",
     "Street" : "Granville Street"
   },
   "Price" : 20.00,
-  "CookingLesson" : true
+  "CookingLesson" : true,
+  "Image" : "http://tinyurl.com/hyk4ae9"
   };
 
-  console.log("The userid is currently " + firebase.auth().currentUser.uid);
+  var uniqueKey;
 
-  $.ajax({
+  //Put Meals
+   $.ajax({
+      async: false,
       url: '/meals/putMeal',
       type: 'PUT',
       dataType: "json",
       contentType: "application/json",
       data: JSON.stringify({testMeal: testMealData, userID: currentUid}),
       success:function(result){
-        alert(result);
+        uniqueKey = result.uniqueKey;
       }
     });
+
+  // Update Chef
+    $.ajax({
+      url: '/chefs/postChefMeal',
+      type: 'POST',
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({mealID: uniqueKey, userID: currentUid}),
+      success:function(result){
+        console.log("successful post to chef")
+      }
+    });
+
 }
 
 var getAllMeals = function(){	
+  var allMeals;
+
   $.ajax({
+      async: false,
       url: '/meals/getAllMeals',
       type: 'GET',
       success:function(result){
-        alert(result);
+        allMeals = result;
       }
     });
+
+  console.log(allMeals);
 }
 
+var getMeal = function(){ 
+
+  var mealid = "-KS9dLGch6sDnyWgP4Kg";
+  var meal;
+
+    $.ajax({
+      async: false,
+      url: '/meals/getMeal/' + mealid,
+      type: 'GET',
+      success:function(result){
+        meal = result;
+      }
+    });
+
+  console.log(meal);
+}
+
+//change prices
+
 var postMeals = function(){
+
+  var mealid = "-KS9dLGch6sDnyWgP4Kg";
+  var editField = "Price";
+  var newValue = 75;
+
+  console.log("Mealid is " + mealid);
+
   $.ajax({
-      url: './guessCollect',
+      url: '/meals/postMeal',
       type: 'POST',
-      data:{filter:picture,update:question,answer},
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({mealID: mealid, child: editField, newVal: newValue}),
       success:function(result){
         alert(result);
       }
     });
 }
 
+//delete the whole meal
 var deleteMeals = function(){
+
+  var mealid = "-KS8UNcrUJOxxpyOQBbQ";
+
   $.ajax({
-      url: './guessCollect',
-      type: 'PUT',
-      data:{filter:picture,update:question,answer},
+      url: '/meals/deleteMeal',
+      type: 'DELETE',
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({mealID: mealid}),
       success:function(result){
         alert(result);
       }
@@ -67,7 +122,7 @@ var deleteMeals = function(){
   document.getElementById('put-meals').addEventListener(
       'click', putMeals);
   document.getElementById('get-meals').addEventListener(
-      'click', getAllMeals);
+      'click', getMeal);
   document.getElementById('post-meals').addEventListener(
       'click', postMeals);
   document.getElementById('delete-meals').addEventListener(

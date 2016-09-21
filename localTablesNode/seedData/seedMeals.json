@@ -7,9 +7,10 @@
 		"Street" : "4 Bayard Road"
 	},
 	"Price" : 5.00,
-	"CookingLesson" : false
-	},
-    {
+	"CookingLesson" : false,
+	"Image" : "https://goo.gl/yV2wUt"
+},
+{
 	"Name" : "Chicken Thai Salad",
 	"Description" : "The best salad ever, and SPICY",
 	"Location" : {
@@ -18,9 +19,10 @@
 		"Street" : "6 Bayard Road"
 	},
 	"Price" : 10.00,
-	"CookingLesson" : false
-	},
-	{
+	"CookingLesson" : false,
+	"Image" : "goo.gl/vBR95x"
+},
+{
 	"Name" : "Steam Mussels",
 	"Description" : "With Tomatoes, White wine and Herbs",
 	"Location" : {
@@ -29,6 +31,91 @@
 		"Street" : "5000 Forbes Ave"
 	},
 	"Price" : 8.00,
-	"CookingLesson" : true
-	}
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/5ll5qv"	
+},
+{
+	"Name" : "Haluski",
+	"Description" : "Haluski is from Pittsburgh’s Polish heritage, haluski is a Polish specialty combining cabbage and noodles. Order it at the Bloomfield Bridge Tavern, aka “The Polish Party House.",
+	"Location" : {
+		"State" : "PA",
+		"City" : "Pittsburgh",
+		"Street" : "3000 Craft Ave"
+	},
+	"Price" : 7.50,
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/LoJw0r"	
+},
+{
+	"Name" : "Soupe à l'oignon",
+	"Description" : "This is a traditional soup made of onions and beef stock, served with croutons and melted cheese on top.",
+	"Location" : {
+		"State" : "NY",
+		"City" : "New York City",
+		"Street" : "5th Ave"
+	},
+	"Price" : 11.50,
+	"CookingLesson" : false,
+	"Image" : "https://goo.gl/YXR4uh"	
+},
+{
+	"Name" : "Sirloin steak",
+	"Description" : "A sirloin steak dinner, served with sauteed onion, fries, broccoli, carrots, and snow peas, garnished with chives",
+	"Location" : {
+		"State" : "NY",
+		"City" : "New York City",
+		"Street" : "2th Ave"
+	},
+	"Price" : 11.50,
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/d4sTzc"	
+},
+{
+	"Name" : "Apple pie",
+	"Description" : "Served with whipped cream or ice cream on top, or alongside cheddar cheese.",
+	"Location" : {
+		"State" : "PA",
+		"City" : "Pittsburgh",
+		"Street" : "Craig Street"
+	},
+	"Price" : 6.50,
+	"CookingLesson" : false,
+	"Image" : "https://goo.gl/xc1K5U"	
+},
+{
+	"Name" : "Eggs Benedict",
+	"Description" : "An American breakfast dish made with poached eggs and hollandaise sauce, served with Canadian bacon",
+	"Location" : {
+		"State" : "CA",
+		"City" : "San Francisco",
+		"Street" : "Castro Street"
+	},
+	"Price" : 6.70,
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/K7Mtj3"	
+},
+{
+	"Name" : "Crab cake",
+	"Description" : "A popular delicacy in Delaware, New Jersey and Maryland, it is served on a roll.",
+	"Location" : {
+		"State" : "NJ",
+		"City" : "Beckers",
+		"Street" : "315 Olivia"
+	},
+	"Price" : 12.50,
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/KXYCS8"	
+},
+{
+	"Name" : "Shrimp Gumbo",
+	"Description" : "Onions, celery and green peppers, the \"holy trinity\" of both Creole and Cajun cooking, add flavor and substance to the thick shrimp and sausage stew, which is served over a heaping portion of white rice.",
+	"Location" : {
+		"State" : "LA",
+		"City" : "New Orleans",
+		"Street" : "325 Filmore Ave"
+	},
+	"Price" : 11.50,
+	"CookingLesson" : true,
+	"Image" : "https://goo.gl/pfYVy8"	
+}
 ]
