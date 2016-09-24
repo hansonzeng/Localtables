@@ -58,6 +58,7 @@ var signInWithPopup = function() {
  */
 var handleSignedInUser = function(user) {
   console.log("signed in");
+  console.log("i got here...")
   currentUid = user.uid;
   var db = firebase.database();
   var chefsRef = db.ref("chefs/");
@@ -94,7 +95,6 @@ var handleSignedInUser = function(user) {
   checkExistingChefs(chefsRef);
 
   document.getElementById('user-signed-in').className = "";
-  // document.getElementById('buttons-signed-in-meals').style.display = 'block';
   document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
@@ -104,6 +104,8 @@ var handleSignedInUser = function(user) {
   } else {
     document.getElementById('photo').style.display = 'none';
   }
+    window.location.assign('/chefGuest');
+
 };
 
 //function to generateChef
