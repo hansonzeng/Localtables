@@ -18,14 +18,14 @@
       // FirebaseUI config.
       var uiConfig = {
         // Url to redirect to after a successful sign-in.
-        'signInSuccessUrl': '/',
+        'signInSuccessUrl': '/chefGuest',
         'callbacks': {
-          'signInSuccess': function(user, credential, redirectUrl) {
+         signInSuccess: function(user, credential, redirectUrl) {
             if (window.opener) {
               // The widget has been opened in a popup, so close the window
               // and return false to not redirect the opener.
-              window.close();
-              return false;
+              // window.close();
+              return true;
             } else {
               // The widget has been used in redirect mode, so we redirect to the signInSuccessUrl.
               return true;

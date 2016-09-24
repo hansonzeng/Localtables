@@ -7,8 +7,10 @@ var uiConfig = {
     // Called when the user has been successfully signed in.
     'signInSuccess': function(user, credential, redirectUrl) {
       handleSignedInUser(user);
+      console.log("sign in successful");
+      console.log(redirectUrl);
       // Do not redirect.
-      return false;
+      return true;
     }
   },
   // Opens IDP Providers sign-in flow in a popup.
@@ -79,7 +81,7 @@ var handleSignedInUser = function(user) {
   };
 
   var checkExistingChefs = function(chefsRef){
-    chefsRef.on("value",function(dataSnapShot){
+    chefsRef.once("value",function(dataSnapShot){
       var flag = true;
       dataSnapShot.forEach(function(data){
         if(data.key === currentUid){
@@ -104,7 +106,6 @@ var handleSignedInUser = function(user) {
   } else {
     document.getElementById('photo').style.display = 'none';
   }
-    window.location.assign('/chefGuest');
 
 };
 

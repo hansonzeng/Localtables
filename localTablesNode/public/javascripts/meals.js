@@ -5,7 +5,6 @@ var mealIDTest = "-KSDCc1zyKs7YfJAiQK-";
 //once user logged into the system
 var putMeals = function(){
   console.log("within the meals.js too!")
-
   var testMealData = {
   "Name" : "Hawaii Pineapples",
   "Description" : "The best pineapples",
