@@ -3,18 +3,11 @@
  */
 // FirebaseUI config.
 var uiConfig = {
-  'callbacks': {
-    // Called when the user has been successfully signed in.
-    'signInSuccess': function(user, credential, redirectUrl) {
-      handleSignedInUser(user);
-      console.log("sign in successful");
-      console.log(redirectUrl);
-      // Do not redirect.
-      return true;
-    }
-  },
-  // Opens IDP Providers sign-in flow in a popup.
+
+    // Opens IDP Providers sign-in flow in a popup.
+  'queryParameterForSignInSuccessUrl': 'signInSuccessUrl',
   'signInFlow': 'popup',
+  'signInSuccessUrl': './chefGuest',
   'signInOptions': [
     // TODO(developer): Remove the providers you don't need for your app.
     {
@@ -32,20 +25,27 @@ var uiConfig = {
     }
   ],
   // Terms of service url.
-  'tosUrl': 'https://www.google.com'
+  'tosUrl': 'https://www.google.com',
+  'callbacks': {
+    // Called when the user has been successfully signed in.
+    'signInSuccess': function(user, credential, redirectUrl) {
+      console.log("signInSuccess");
+      handleSignedInUser(user);
+      console.log('user',user);
+      console.log('credential',credential);
+      console.log('redirectUrl',redirectUrl);
+      // Do redirect.
+      return true;
+    }
+  },
+  
+
 };
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // Keep track of the currently signed in user.
 var currentUid = null;
-
-/**
- * Redirects to the FirebaseUI widget.
- */
-var signInWithRedirect = function() {
-  window.location.assign('/widget');
-};
 
 /**
  * Open a popup with the FirebaseUI widget.
@@ -60,12 +60,13 @@ var signInWithPopup = function() {
  */
 var handleSignedInUser = function(user) {
   console.log("signed in");
-  console.log("i got here...")
   currentUid = user.uid;
   var db = firebase.database();
   var chefsRef = db.ref("chefs/");
 
   var createNewChef = function(){
+    console.log("inside method creating new chef");
+    console.log("user is:",user);
     var chefJSON = generateUserJson(user)
     //put user into database, assume curently a chef~
     $.ajax({
@@ -81,7 +82,8 @@ var handleSignedInUser = function(user) {
   };
 
   var checkExistingChefs = function(chefsRef){
-    chefsRef.once("value",function(dataSnapShot){
+
+    chefsRef.on("value",function(dataSnapShot){
       var flag = true;
       dataSnapShot.forEach(function(data){
         if(data.key === currentUid){
@@ -89,12 +91,15 @@ var handleSignedInUser = function(user) {
         }
       });
       if(flag){
+          console.log("flag was true so running createNewChef method");
           createNewChef();
       }
     });
   };
 
-  checkExistingChefs(chefsRef);
+  console.log('right before running method checkExistingChefs');
+  // checkExistingChefs(chefsRef);
+  createNewChef();
 
   document.getElementById('user-signed-in').className = "";
   document.getElementById('user-signed-in').style.display = 'block';
@@ -106,11 +111,11 @@ var handleSignedInUser = function(user) {
   } else {
     document.getElementById('photo').style.display = 'none';
   }
-
 };
 
 //function to generateChef
 var generateUserJson = function(user){
+  console.log('generating user',  user)
   var chef = {
     "Name" : user.displayName,
     "Picture" : user.photoURL,
@@ -170,7 +175,7 @@ var getChefMeals = function(){
  * Initializes the app.
  */
 var initApp = function() {
-  document.getElementById('get-chef-meals').addEventListener('click',getChefMeals);
+  //document.getElementById('get-chef-meals').addEventListener('click',getChefMeals);
   document.getElementById('sign-out').addEventListener('click', function() {
     console.log("current user logged out is " + firebase.auth().currentUser.uid);
     firebase.auth().signOut();

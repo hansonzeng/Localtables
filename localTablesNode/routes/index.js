@@ -26,6 +26,10 @@ router.get('/review', function(req, res, next) {
 
 router.get('/creditCardData', function(req, res, next) {
   res.render('credit_card_form');
+
+
+router.get('/checkout', function(req, res, next) {
+  res.render('purchase');
 });
 
 module.exports = router;

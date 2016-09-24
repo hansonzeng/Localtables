@@ -8,3 +8,15 @@ body {
 h1 {
   font-weight: bold;
 }
+
+#upload_link{
+    text-decoration:none;
+}
+#upload{
+    display:none
+}
+
+button .full-width{
+  width:100%;
+  //display:block; //only if you're having issues
+}

@@ -15,30 +15,37 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript">
+      console.log("in widget.ejs");
+
       // FirebaseUI config.
       var uiConfig = {
         // Url to redirect to after a successful sign-in.
-        'signInSuccessUrl': '/chefGuest',
+        'signInSuccessUrl': '/',
+        'signInOptions': [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        'tosUrl': 'https://www.google.com',
         'callbacks': {
-         signInSuccess: function(user, credential, redirectUrl) {
+          'signInSuccess': function(user, credential, redirectUrl) {
+            console.log("in widget.ejs");
+            console.log('user',user);
+            console.log('credential',credential);
+            console.log('redirectUrl',redirectUrl);
             if (window.opener) {
               // The widget has been opened in a popup, so close the window
               // and return false to not redirect the opener.
               // window.close();
-              return true;
+              return false;
             } else {
               // The widget has been used in redirect mode, so we redirect to the signInSuccessUrl.
               return true;
             }
           }
         },
-        'signInOptions': [firebaseui-container
-          // TODO(developer): Remove the providers you don't need for your app.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        ],
-        // Terms of service url.
-        'tosUrl': 'https://www.google.com'
+        
+        
       };
 
       // Initialize the FirebaseUI Widget using Firebase.

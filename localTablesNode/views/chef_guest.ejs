@@ -33,29 +33,27 @@
         </div>
       </div>
 
-      <div id="loaded" class="hidden">
+     <div id="loaded" style="top:80%;left:35%">
         <div id="main">
-          <div id="user-signed-in" class="hidden">
-            <div id="user-info">
-              <div id="photo-container"><img id="photo"></img></div>
-              <div id="name"></div>
-              <button id="sign-out" type="button" class="btn btn-danger">Sign Out</button>
+          <div id="user-signed-in">
+            <div id="user-info" style="position: absolute;width: 100%;top: 85%;">
+              <button id="sign-out" style="border-radius:20px;" type="button" class="btn btn-danger btn-lg btn-block">Sign Out</button>
               <div class="clearfix"></div>
+            </div>
             </div>
           </div>
 
-          <div id="user-signed-out" class="hidden"></div>
           <div id="firebaseui-spa">
             <div id="firebaseui-container"></div>
           </div>
 
         </div>
       </div>
-    </div>
-    
 
     <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
-    <script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    
+        <script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
