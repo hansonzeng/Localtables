@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LocalTable</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="stylesheets/review.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(51,51,51,0.78)">
+          <div class="container">
+            <i id="back_button" onclick="history.back(-1)" class="fa fa-angle-left" style="font-size:48px;color:white;position:absolute;top:0%;left:4%"></i>
+            <h4>Write a Review</h4>
+            <h5>Done</h5>
+          </div>
+        </nav>
+
+        <div class="row" style="margin-top:50px;">
+            <div class="col">
+              <a class="thumbnail">
+                <img src="http://www.bettycrocker.com/-/media/Images/Betty-Crocker/Showcase-Pages/Ideas/Everyday-Meals/Landing/everyday-meals-feature_110115.jpg" alt="Upload Image">
+              </a>
+            </div>
+        </div>
+
+        <div class="container">
+          <form>
+            <div class="form-group">
+              <label for="review">Review</label>
+              <textarea class="form-control" rows="10" id="review" placeholder="How was the food? How was the service?"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
+            authDomain: "localtables-28928.firebaseapp.com",
+            databaseURL: "https://localtables-28928.firebaseio.com",
+            storageBucket: "localtables-28928.appspot.com",
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="javascripts/auth.js"></script>
+        <script src="javascripts/meals.js"></script>
+        <script src="javascripts/form.js"></script>
+    </body>
+</html>

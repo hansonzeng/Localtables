@@ -1,0 +1,31 @@
+h4 {
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	padding-top: 2%;
+}
+
+h5 {
+	float: right;
+	color: white;
+	position: absolute;
+	top: 18%;
+	right: 7%;
+	font-size: 15px;
+}
+
+#container {
+  text-align: center;
+}
+
+
+body {
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #dcdcdc;
+  font-family: sans-serif;
+}
+
+img {
+    opacity: 0.7;
+}
