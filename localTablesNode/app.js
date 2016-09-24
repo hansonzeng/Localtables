@@ -10,7 +10,6 @@ var chefs = require('./routes/chefs');
 var meals = require('./routes/meals')
 
 var app = express();
-var port = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -64,6 +63,15 @@ app.use(function(err, req, res, next) {
 //     error: {}
 //   });
 // });
+
+// CREATE SERVER AND RUN ON DIGITAL OCEAN!~
+// var server = http.createServer(app);
+// var port = process.env.PORT || 5000;
+// server.listen(port, function() {
+//     console.log('Express server running on http://104.236.189.139/:' + port);
+// });
+
+var port = process.env.PORT || 3000;
 
 // ================================================================
 // start our server

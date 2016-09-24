@@ -63,7 +63,6 @@ var handleSignedInUser = function(user) {
   var chefsRef = db.ref("chefs/");
 
   var createNewChef = function(){
-    console.log("did I create new chef? Yes...")
     var chefJSON = generateUserJson(user)
     //put user into database, assume curently a chef~
     $.ajax({
@@ -80,13 +79,8 @@ var handleSignedInUser = function(user) {
 
   var checkExistingChefs = function(chefsRef){
     chefsRef.on("value",function(dataSnapShot){
-      console.log("datasnapshot name is " + dataSnapShot.val());
       var flag = true;
       dataSnapShot.forEach(function(data){
-        console.log("the snapshot is " + data);
-        console.log("the key is " + data.key);
-        console.log("the current Uid is " + currentUid);
-        console.log("the comparison boolean is" + (data.key === currentUid));
         if(data.key === currentUid){
           flag = false;
         }
@@ -94,16 +88,14 @@ var handleSignedInUser = function(user) {
       if(flag){
           createNewChef();
       }
-      console.log("did I fail the check? yes...")
     });
   };
 
   checkExistingChefs(chefsRef);
 
-
-  document.getElementById('user-signed-in').style.display = 'block';
-  document.getElementById('buttons-signed-in-meals').style.display = 'block';
   document.getElementById('user-signed-in').className = "";
+  // document.getElementById('buttons-signed-in-meals').style.display = 'block';
+  document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   if (user.photoURL){
@@ -154,11 +146,28 @@ firebase.auth().onAuthStateChanged(function(user) {
   user ? handleSignedInUser(user) : handleSignedOutUser();
 });
 
+var getChefMeals = function(){
+  var allMeals = [];
+
+  $.ajax({
+        url: '/chefs/getChefMeals/' + currentUid,
+        type: 'GET',
+        success: function(result){
+            result.forEach(function(obj){
+              console.log("I'm getting all the meals for the chef")
+              console.log(obj);
+            });
+         }
+
+      });
+
+}
+
 /**
  * Initializes the app.
  */
 var initApp = function() {
-
+  document.getElementById('get-chef-meals').addEventListener('click',getChefMeals);
   document.getElementById('sign-out').addEventListener('click', function() {
     console.log("current user logged out is " + firebase.auth().currentUser.uid);
     firebase.auth().signOut();

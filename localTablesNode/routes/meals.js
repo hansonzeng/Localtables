@@ -18,35 +18,28 @@ var putSeedData = function(){
 	}
 }
 
-putSeedData();
-
-//prints all the meals in console
-// mealsRef.orderByChild("Price").on("value",function(dataSnapShot){
-// 	console.log(dataSnapShot.val());
-// });
+// putSeedData();
 
 /* CRUD meals into database. */
 
 router.put('/putMeal',function(req,res){
-	console.log("the user is " + req.body.userID);
+	var userid = req.body.userID
+	var value = true;
 
-	var key = mealsRef.push().key;
-	mealsRef.push(req.body.testMeal);
+	//save inside meals node and also update chef's meals node
+	var key = mealsRef.push(req.body.testMeal).key;
+	db.ref("chefs/" + userid + "/meals/").child(key).set(value);
 
-	//sends back unique Meal Key
-	res.contentType('json');
-  	res.send(JSON.stringify({uniqueKey: key}));
+  	res.send("success");
 }); //CREATE
 
 router.get('/getMeal/:mealID',function(req,res){	
-	console.log("The mealid is " + req.params.mealID);
 	var mealid = req.params.mealID;
 	var resultMeal;
 
 	var getMealRef = db.ref("meals/" + mealid);
-	getMealRef.on('value',function(snapshot){
+	getMealRef.once('value',function(snapshot){
 		resultMeal = snapshot.val();
-		console.log(snapshot.val());
 	});
     res.send(resultMeal);
 }); //RETRIEVE Specific One
@@ -54,21 +47,14 @@ router.get('/getMeal/:mealID',function(req,res){
 router.get('/getAllMeals',function(req,res){	
 	console.log('getting all the meals');
 	var allMeals = [];
-	allMeals.push("foo");
 
-	mealsRef.on("value",function(dataSnapShot){
+	mealsRef.once("value",function(dataSnapShot){
 		dataSnapShot.forEach(function(child){
-			console.log(child.val());
 			var oneMeal = child.val();
-			allMeals.push(oneMeal);
+			allMeals.push({meal: oneMeal, key: child.key});
 		});
+		res.send(allMeals);
 	});	
-
-	allMeals.forEach(function(obj){
-		console.log(obj);
-	});
-	// console.log("list of meals " + allMeals.length);
-    res.send(allMeals);
 }); //RETRIEVE ALL
 
 router.post('/postMeal',function(req,res){

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+var mealIDTest = "-KSDCc1zyKs7YfJAiQK-";
 //FUNCTIONS ONLY FOR TESTING PURPOSES CRUD FOR MEALS; Should run these
 //once user logged into the system
 var putMeals = function(){
@@ -18,7 +19,6 @@ var putMeals = function(){
   "Image" : "http://tinyurl.com/hyk4ae9"
   };
 
-  var uniqueKey;
 
   //Put Meals
    $.ajax({
@@ -29,25 +29,14 @@ var putMeals = function(){
       contentType: "application/json",
       data: JSON.stringify({testMeal: testMealData, userID: currentUid}),
       success:function(result){
-        uniqueKey = result.uniqueKey;
-      }
-    });
-
-  // Update Chef
-    $.ajax({
-      url: '/chefs/postChefMeal',
-      type: 'POST',
-      dataType: "json",
-      contentType: "application/json",
-      data: JSON.stringify({mealID: uniqueKey, userID: currentUid}),
-      success:function(result){
-        console.log("successful post to chef")
+        console.log(result);
       }
     });
 
 }
 
 var getAllMeals = function(){	
+  console.log("Getting all meals now");
   var allMeals;
 
   $.ajax({
@@ -59,12 +48,15 @@ var getAllMeals = function(){
       }
     });
 
-  console.log(allMeals);
+  allMeals.forEach(function(obj){
+    console.log(obj)
+  });
+
 }
 
 var getMeal = function(){ 
 
-  var mealid = "-KS9dLGch6sDnyWgP4Kg";
+  var mealid = mealIDTest;
   var meal;
 
     $.ajax({
@@ -83,7 +75,7 @@ var getMeal = function(){
 
 var postMeals = function(){
 
-  var mealid = "-KS9dLGch6sDnyWgP4Kg";
+  var mealid = mealIDTest;
   var editField = "Price";
   var newValue = 75;
 
@@ -104,7 +96,7 @@ var postMeals = function(){
 //delete the whole meal
 var deleteMeals = function(){
 
-  var mealid = "-KS8UNcrUJOxxpyOQBbQ";
+  var mealid = mealIDTest;
 
   $.ajax({
       url: '/meals/deleteMeal',
@@ -123,6 +115,8 @@ var deleteMeals = function(){
       'click', putMeals);
   document.getElementById('get-meals').addEventListener(
       'click', getMeal);
+  document.getElementById('get-all-meals').addEventListener(
+      'click', getAllMeals);
   document.getElementById('post-meals').addEventListener(
       'click', postMeals);
   document.getElementById('delete-meals').addEventListener(
