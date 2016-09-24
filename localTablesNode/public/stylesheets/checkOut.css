@@ -34,10 +34,22 @@ p {
 	left: 0;
     position: absolute;
     text-align: center;
-    top: 122px;
+    top: 95px;
     width: 100%;
     z-index: 1;
     font-weight: bold;
     font-size: 20px;
+    color: #322929;
+}
+
+h1 {
+	left: 0;
+    position: absolute;
+    text-align: center;
+    top: 119px;
+    width: 100%;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 40px;
     color: #322929;
 }

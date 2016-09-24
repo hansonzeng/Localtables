@@ -73,3 +73,33 @@ $(".input-number").keydown(function (e) {
 $(".back_button").click(function() {
     history.back(-1);
 })
+
+$("#img").on('click', function(e){
+    e.preventDefault();
+    $("#upload:hidden").trigger('click');
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#my_img')
+                .attr('src', e.target.result)
+                .width(370)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function initialize() {
+
+var input = document.getElementById('location');
+var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+

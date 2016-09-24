@@ -24,4 +24,8 @@ router.get('/review', function(req, res, next) {
   res.render('review');
 });
 
+router.get('/checkout', function(req, res, next) {
+  res.render('purchase');
+});
+
 module.exports = router;
