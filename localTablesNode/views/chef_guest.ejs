@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>LocalTable</title>
     <meta charset="UTF-8">
-    <title>LocalTables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="stylesheets/auth.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="screen" />
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="stylesheets/chefGuest.css" rel="stylesheet" type="text/css" media="screen" />
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
-
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
     <div id="container">  
-      <h1>Who Are You?</h1>
-
+      <h1>Who are you?</h1>
       <div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="..." alt="...">
-    </a>
-  </div>
-  ...
-</div>
-      
+        <div class="col-xs col-md-4" style="margin:3%;">
+          <a href="#1" class="thumbnail">
+            <img src="https://image.spreadshirtmedia.net/image-server/v1/designs/15874268,width%3D178,height%3D178.png" alt="CHEF">
+            <h4> I am a <em><b>chef</b></em> </h4>
+          </a>
+        </div>
+        <div class="col-xs col-md-3" style="margin:3%;">
+          <a href="#2" class="thumbnail">
+            <img src="http://www.clipartkid.com/images/245/baby-hand-print-clip-art-clipart-panda-free-clipart-images-VHELcQ-clipart.png" alt="GUEST">
+            <h4> I am a <em><b>guest</b></em> </h4>
+          </a>
+        </div>
+      </div>
+
       <div id="loaded" class="hidden">
         <div id="main">
           <div id="user-signed-in" class="hidden">
             <div id="user-info">
-              <div id="photo-container">
-                <img id="photo"></img>
-              </div>
+              <div id="photo-container"><img id="photo"></img></div>
               <div id="name"></div>
-              <div id="email"></div>
+              <button id="sign-out" type="button" class="btn btn-danger">Sign Out</button>
               <div class="clearfix"></div>
             </div>
-            <p>
-              <button id="sign-out">Sign Out</button>
-              <button id="delete-account">Delete account</button>
-            </p>
           </div>
-          <div id="user-signed-out" class="hidden">
+
+          <div id="user-signed-out" class="hidden"></div>
+          <div id="firebaseui-spa">
+            <div id="firebaseui-container"></div>
           </div>
-          <div id="buttons-signed-in-meals" class="hidden">
-            <p>
-              <button id="put-meals">Testing Ajax Put</button>
-              <button id="get-meals">Testing Ajax Get</button>
-              <button id="post-meals">Testing Ajax Post</button>
-              <button id="delete-meals">Testing Ajax Delete</button>
-             <!--  <button id="sign-in-with-popup">Sign In with Popup</button> -->
-            </p>
-          </div>
-            <div id="firebaseui-spa">
-              <div id="firebaseui-container"></div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

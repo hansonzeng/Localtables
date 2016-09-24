@@ -12,4 +12,16 @@ router.get('/widget', function(req, res, next) {
   res.render('widget');
 });
 
+router.get('/chefGuest', function(req, res, next) {
+  res.render('chef_guest');
+});
+
+router.get('/createMeal', function(req, res, next) {
+  res.render('create_meal');
+});
+
+router.get('/review', function(req, res, next) {
+  res.render('review');
+});
+
 module.exports = router;
