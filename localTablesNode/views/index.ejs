@@ -37,6 +37,7 @@
               <button id="post-meals" type="button" class="btn btn-outline-info">Edit Meal</button>
               <button id="delete-meals" type="button" class="btn btn-outline-info">Delete Meal</button>
                <button id="get-chef-meals" type="button" class="btn btn-outline-info">Get Chef's Meals</button>
+               <button id="pay-meal" type="button" class="btn btn-outline-info">Pay</button>
 
               <div class="clearfix"></div>
             </div>
@@ -52,6 +53,10 @@
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_TK18ZwUnK2CT1Wmof8WsQl8S');
+    </script>
     <script>
       // Initialize Firebase
       var config = {
@@ -64,5 +69,6 @@
     </script>
     <script src="javascripts/auth.js"></script>
     <script src="javascripts/meals.js"></script>
+    <script src="javascripts/payment.js"></script>
   </body>
 </html>
