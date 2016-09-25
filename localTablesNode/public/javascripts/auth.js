@@ -102,15 +102,15 @@ var handleSignedInUser = function(user) {
   createNewChef();
 
   document.getElementById('user-signed-in').className = "";
-  document.getElementById('user-signed-in').style.display = 'block';
+  // document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
-  document.getElementById('name').textContent = user.displayName;
-  if (user.photoURL){
-    document.getElementById('photo').src = user.photoURL;
-    document.getElementById('photo').style.display = 'block';
-  } else {
-    document.getElementById('photo').style.display = 'none';
-  }
+  // document.getElementById('name').textContent = user.displayName;
+  // if (user.photoURL){
+  //   document.getElementById('photo').src = user.photoURL;
+  //   document.getElementById('photo').style.display = 'block';
+  // } else {
+  //   document.getElementById('photo').style.display = 'none';
+  // }
 };
 
 //function to generateChef
@@ -168,7 +168,6 @@ var getChefMeals = function(){
          }
 
       });
-
 }
 
 /**
@@ -179,6 +178,7 @@ var initApp = function() {
   document.getElementById('sign-out').addEventListener('click', function() {
     console.log("current user logged out is " + firebase.auth().currentUser.uid);
     firebase.auth().signOut();
+    window.location.href = "./";
   });
 };
 
