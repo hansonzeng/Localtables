@@ -81,6 +81,21 @@ $("#img").on('click', function(e){
     $("#upload:hidden").trigger('click');
 });
 
+
+$('.close').click(function () {
+  $(this).parent().removeClass('in'); // hides alert with Bootstrap CSS3 implem
+});
+
+$('#confirm').click (function (e) {
+   e.preventDefault(); //will stop the link href to call the blog page
+   $('#alert').addClass('in'); // shows alert with Bootstrap CSS3 implem
+
+   setTimeout(function () {
+       window.location.href = "./chefGuest"; //will redirect to your blog page (an ex: blog.html)
+    }, 1000); //will call the function after 2 secs.
+
+});
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();

@@ -1,0 +1,16 @@
+#fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 23px;
+
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.btn-block {
+    display: block;
+    width: 92%;
+}

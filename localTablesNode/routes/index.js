@@ -33,4 +33,8 @@ router.get('/meals', function(req, res, next) {
   res.render('choose_meal');
 });
 
+router.get('/detail', function(req, res, next) {
+  res.render('detail_meal');
+});
+
 module.exports = router;
