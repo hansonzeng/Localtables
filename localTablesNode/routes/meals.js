@@ -34,6 +34,7 @@ router.put('/putMeal',function(req,res){
 }); //CREATE
 
 router.get('/getMeal/:mealID',function(req,res){	
+	console.log('getting a meal*******************************************************************************');
 	var mealid = req.params.mealID;
 	var resultMeal;
 

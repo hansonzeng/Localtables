@@ -26,10 +26,14 @@ router.get('/review', function(req, res, next) {
 
 router.get('/creditCardData', function(req, res, next) {
   res.render('credit_card_form');
-
+});
 
 router.get('/checkout', function(req, res, next) {
   res.render('purchase');
+});
+
+router.get('/meals', function(req, res, next) {
+  res.render('choose_meal');
 });
 
 module.exports = router;

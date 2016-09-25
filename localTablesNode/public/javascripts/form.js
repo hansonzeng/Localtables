@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 $('.btn-number').click(function(e){
     e.preventDefault();
     
@@ -103,3 +105,4 @@ var autocomplete = new google.maps.places.Autocomplete(input);
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
+});
