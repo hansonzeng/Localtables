@@ -33,7 +33,7 @@ router.get('/getChefMeals/:uid', function(req, res, next) {
 				allMeals.push({meal: dataSnapShot.val(), key: dataSnapShot.getKey()});
 			});		
 		});
-		res.send(allMeals);
+		res.render("detail_chef.ejs",allMeals);
 	});
 });
 
