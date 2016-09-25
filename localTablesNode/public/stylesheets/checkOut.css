@@ -14,8 +14,22 @@ h5 {
 	font-size: 15px;
 }
 
-#container {
-  text-align: center;
+
+#fixedbutton {
+    position: absolute;
+    bottom: 0px;
+    right: 16px;;
+
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.btn-block {
+    display: block;
+    width: 92%;
 }
 
 

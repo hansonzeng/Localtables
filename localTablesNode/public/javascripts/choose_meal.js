@@ -19,11 +19,10 @@ $(document).ready(function(){
 	      }
 	    });
 
-	  var id = 0;
 	  allMeals.forEach(function(obj){
 	  		var key = obj.key;
 		  	var html = '<a href="http://localhost:3000/meals/getMeal/' + key + '"><div class="panel-body" style="height:50px;">\
-						<div class="row" id=' + id + '>\
+						<div class="row" id="panel">\
 							<div class="col-xs-6 col-md-2">\
 								<img class="img-circle" src="' + obj.meal.Image + '"' + 'alt="Image" style="width:50px;height:50px;">\
 							</div>\
@@ -39,19 +38,10 @@ $(document).ready(function(){
 
 	   $('#add').append(html);
 	    console.log(obj)
-	    id++;
 	  });
 
 	}
 
 	getAllMeals();
-
-	// function fun() {
-	//  	alert("hello");
-	// }
-
-	// $(".panel").on("click", function(obj){
- //   		console.log($(".panel").data());
-	// });
 
 });
