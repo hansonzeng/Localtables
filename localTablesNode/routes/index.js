@@ -24,8 +24,13 @@ router.get('/review', function(req, res, next) {
   res.render('review');
 });
 
+
 router.get('/checkout', function(req, res, next) {
   res.render('purchase');
+});
+
+router.get('/meals', function(req, res, next) {
+  res.render('choose_meal');
 });
 
 module.exports = router;
