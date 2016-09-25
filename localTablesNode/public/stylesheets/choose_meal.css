@@ -16,6 +16,8 @@ h4 {
     border-radius: 50%;
 }
 
+a { color: inherit; } 
+
 hr {
     margin-top: 55px;
     margin-bottom: 20px;

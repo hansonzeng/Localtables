@@ -74,10 +74,16 @@
                     <input id="lessons" type="checkbox"> Check this to provide cooking lessons
                   </label>
               </div>
-              <a href="#">
+              <a>
                 <button id="confirm" style="border-radius:20px;" type="button" class="btn btn-success btn-lg btn-block">Confirm</button>
               </a>
             </form>
+
+            <div id="alert" style="position: fixed;top: 0;left: 0;width: 100%;" class="alert alert-success alert-block alert-dismissible fade" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="position: absolute;right: 28px;">&times;</span></button>
+              <strong>Success!!</strong>Your Meal Has Been Created!
+            </div>
+
         </div>
 
         <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
