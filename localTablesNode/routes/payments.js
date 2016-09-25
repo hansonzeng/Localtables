@@ -14,7 +14,7 @@ router.post('/processPayments', function(req, res, next) {
   var token = req.body.stripeToken;
 
   var charge = stripe.charges.create({
-  amount: 1000, // Amount in cents
+  amount: 3000, // Amount in cents
   currency: "usd",
   source: token,
   description: "Charges for "
