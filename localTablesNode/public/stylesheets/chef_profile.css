@@ -1,0 +1,35 @@
+h4 {
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	padding-top: 2%;
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body {
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  font-family: sans-serif;
+}
+
+img {
+    vertical-align: middle;
+    width: 267px;
+    height: 140px;
+    position: absolute;
+    right: 15%;
+    bottom: 65%;
+}
+
+p {
+	position: absolute;
+	width: 140px;
+    height: 140px;
+    position: absolute;
+    right: 29%;
+    top: 38%;
+}
