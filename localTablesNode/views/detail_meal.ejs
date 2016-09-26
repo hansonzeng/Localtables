@@ -28,7 +28,7 @@
 
         <div class="container">
             <div class="row">
-                <h1><b><%= meal.Name %><span style="font-size:22px;color:green;" class="glyphicon glyphicon-ok" aria-hidden="true"></span></b></h1>
+                <h1><b><%= meal.Name %> <span style="font-size:22px;color:green;" class="glyphicon glyphicon-ok" aria-hidden="true"></span></b></h1>
                 
             </div>
             <div class="row" style="padding-right:10%;">
@@ -44,18 +44,16 @@
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 This meal is for a party of <%= meal.PartySize%>
             </div>
-            <br><br>
             <div class="row">
-                <div class="col">
+                <div class="inline">
                     <% if (meal.CookingLesson){ %>
                         <p style="color:green">Cooking lesson is available</p>
                     <% } else{ %>
                         <p style="color:red">Cooking lesson is not available</p>
                     <% }%>
                 </div>
-
-                <div class="col" style="position:absolute;top: 66%;right: 10%;">
-                    <h1><b>$<%= meal.Price%></b></h1>
+                <div class="inline" style="">
+                    <h1>&nbsp&nbsp<b>$<%= meal.Price%></b></h1>
                 </div>
 
             </div>
