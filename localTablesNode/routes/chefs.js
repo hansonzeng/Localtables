@@ -34,10 +34,12 @@ router.get('/getChefMeals/:uid', function(req, res, next) {
 				console.log("dataSnapShot key is " + dataSnapShot.getKey());
 				console.log("value is " + dataSnapShot.val());
 				allMeals.push({meal: dataSnapShot.val(), key: dataSnapShot.getKey()});
+				if(allMealsIds.length === allMeals.length){
+					console.log("Onside allmealsloop length",allMeals.length);
+					res.render("detail_chef.ejs",{chefMeals: allMeals});	
+				}
 			});
 		});
-		console.log("Onside allmealsloop length",allMeals.length);
-		res.render("detail_chef.ejs",{chefMeals: allMeals});	
 	});
 });
 
