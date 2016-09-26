@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="stylesheets/checkOut.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../../stylesheets/checkOut.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
         <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
@@ -27,25 +27,25 @@
         <div class="row" style="margin-top:50px;">
             <div class="col">
               <p>Agree to pay this amount?</p>
-              <h1> $24.00</h1>
+              <h1 id="price_meal">$<%= meal.Price%></h1>
               <a class="thumbnail">
-                <img src="http://www.bettycrocker.com/-/media/Images/Betty-Crocker/Showcase-Pages/Ideas/Everyday-Meals/Landing/everyday-meals-feature_110115.jpg" alt="Upload Image">
+                <img src=<%= meal.Image%> alt="Upload Image">
               </a>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <h2><b>Okonomiyaki <span style="font-size:22px;color:green;" class="glyphicon glyphicon-ok" aria-hidden="true"></span></b></h2>
+                <h2 id="name_meal"><b><%= meal.Name%> <span style="font-size:22px;color:green;" class="glyphicon glyphicon-ok" aria-hidden="true"></span></b></h2>
                 
             </div>
-            <div class="row" style="padding-right:10%;">
-                <p1>A Japanese savoury pancake containing a variety of ingredients. The name is derived from the word okonomi, meaning 'how you like' or 'what you like', and yaki meaning 'grill'.</p1>
+            <div id="description_meal" class="row" style="padding-right:10%;">
+                <p1><%= meal.Description%></p1>
             </div>
             <br>
             <div class="row">
                 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                5000 Forbes Ave, Pittsburgh, PA 15289
+                <%= meal.Location.Street%>
             </div>
             <br>
             <div class="row">
@@ -145,7 +145,7 @@
           };
           firebase.initializeApp(config);
         </script>
-        <script src="javascripts/meals.js"></script>
-        <script src="javascripts/payment.js"></script>
+        <script src="../../javascripts/meals.js"></script>
+        <script src="../../javascripts/payment.js"></script>
     </body>
 </html>

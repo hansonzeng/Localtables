@@ -4,6 +4,8 @@ $(document).ready(function(){
 	console.log("LOADING******************PAYMENT.JS");
 
 	var token;
+	var price = parseFloat($("#price_meal").text().slice(1,5))*100
+	var name = $("#name_meal").text()
 
 	var payMeal = function(){
 		console.log("inside the paymeals function");
@@ -37,7 +39,7 @@ $(document).ready(function(){
 	      type: 'POST',
 	      dataType: "json",
 	      contentType: "application/json",
-	      data: JSON.stringify({stripeToken : token}),
+	      data: JSON.stringify({stripeToken : token, mealPrice: price, mealName: name}),
 	      success:function(result){
 	        alert(result);
 	      }

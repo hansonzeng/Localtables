@@ -21,9 +21,7 @@
             <div class="col">
               <i id="back_button" onclick="history.back(-1)" class="fa fa-angle-left" style="font-size:48px;color:white;position:absolute;top:0%;left:4%"></i>
               <a class="thumbnail">
-
-                <img src=<%= meal.Image %> alt="Upload Image">
-
+                <img src=<%= meal.Image%> alt="Upload Image">
               </a>
             </div>
         </div>
@@ -55,9 +53,11 @@
                         <p style="color:red">Cooking lesson is not available</p>
                     <% }%>
                 </div>
+
                 <div class="col" style="position:absolute;top: 66%;right: 10%;">
-                    <h1><b>$24.00</b></h1>
+                    <h1><b>$<%= meal.Price%></b></h1>
                 </div>
+
             </div>
             <hr>
             <h3><b style="position: absolute;left: 19px;">Reviews</b></h3>
@@ -70,7 +70,7 @@
                 <br>
             </div>
             <form>
-                <a href="../../checkout">
+                <a href="../checkout/<%= key %>"> 
                     <button id="fixedbutton" style="border-radius:20px;" type="button" class="btn btn-success btn-lg btn-block">Confirm</button>
                 </a>
             </form>

@@ -12,12 +12,14 @@ var stripe = require("stripe")("sk_test_TrUq42PqYiMFQx7GhesFAkv6");
 
 router.post('/processPayments', function(req, res, next) {
   var token = req.body.stripeToken;
+  var price = req.body.mealPrice;
+  var name = req.body.mealName;
 
   var charge = stripe.charges.create({
-  amount: 3000, // Amount in cents
+  amount: price, // Amount in cents
   currency: "usd",
   source: token,
-  description: "Charges for "
+  description: "Charges for " + name
 }, function(err, charge) {
   if (err && err.type === 'StripeCardError') {
     console.log("Card has been denied")
