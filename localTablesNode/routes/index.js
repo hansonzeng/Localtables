@@ -16,6 +16,10 @@ router.get('/chefGuest', function(req, res, next) {
   res.render('chef_guest');
 });
 
+router.get('/chefDetail', function(req, res, next) {
+  res.render('detail_chef');
+});
+
 router.get('/createMeal', function(req, res, next) {
   res.render('create_meal');
 });
