@@ -43,14 +43,17 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-2 inline">
-                                <img id="food_img" class="img-circle" src="<%- chefMeals[i].meal.Image %>" alt="image">
+                                <img id="food_img" class="img-circle" src="<%-chefMeals[i].meal.Image %>" alt="image">
                             </div>
-                            <div class="col-xs-8 inline">
-                                <p5><b><%- chefMeals[i].meal.Name %></b></p5><br>
-                                <p5><%- chefMeals[i].meal.Location %></p5>
+                            <div class="col-xs-8 inline" style="position: absolute;left: 31%;">
+                                <p5 class="txt0"><b><%- chefMeals[i].meal.Name %></b></p5><br>
+                                <% var x = chefMeals[i].meal.Location.split(",") %><br>
+                                <h6 class="txt"><%- x[0] %></h6>
                             </div>
                             <div class="col-xs-2 inline" style="position:absolute;right:15%">
-                                <p5>$<%- chefMeals[i].meal.Price %></p5>
+                                <span class="glyphicon glyphicon-edit inline" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove inline" aria-hidden="true"></span><br><br>
+                                <h6 class="txt2">$<%- chefMeals[i].meal.Price %></h6>
                             </div>
                         </div>
                     </div>

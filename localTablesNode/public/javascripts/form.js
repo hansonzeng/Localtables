@@ -81,6 +81,19 @@ $("#img").on('click', function(e){
     $("#upload:hidden").trigger('click');
 });
 
+$("#upload").change(function(e) {
+
+    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+
+        var file = e.originalEvent.srcElement.files[i];
+
+        var reader = new FileReader();
+        reader.onloadend = function() {
+             $('#my_img').attr('src', reader.result);
+        }
+        reader.readAsDataURL(file);        }
+});
+
 
 $('.close').click(function () {
   $(this).parent().removeClass('in'); // hides alert with Bootstrap CSS3 implem

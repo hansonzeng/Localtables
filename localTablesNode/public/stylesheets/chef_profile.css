@@ -22,6 +22,26 @@ body {
   box-shadow: 0 0px 0px rgba(0,0,0,0);
 }
 
+h6.txt {
+  width: 110px !important;
+  word-wrap: break-word;
+}
+
+h6.txt2 {
+  width: 100px !important;
+  word-wrap: break-word;
+}
+
+p5.txt0 {
+  width: 121px !important;
+  word-wrap: break-word;
+}
+
+#food_img {
+  width: 75px;
+  height: 75px;
+}
+
 #user_img {
     vertical-align: middle;
     width: 200px;

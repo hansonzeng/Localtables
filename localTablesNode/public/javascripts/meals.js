@@ -22,7 +22,8 @@ var putMeals = function(){
 
   var x = document.getElementsByClassName("form-control");
   var y = document.getElementById("lessons");
-  var img = document.getElementById('img').src;
+  var img = document.getElementById('my_img').src;
+  console.log(img);
 
   console.log("y",y.checked);
   console.log("party",x[3].value);
