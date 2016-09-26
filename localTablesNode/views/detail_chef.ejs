@@ -26,20 +26,41 @@
 
         <div class="container">
 
-            <div class="row" style="margin-top:50px;">
+            <div class="row" id="block" style="margin-top:50px;">
                 <div class="col">
                   <a class="img-rounded">
-                    <img src="http://cliparts.co/cliparts/5TR/raz/5TRraz5jc.jpg" alt="Upload Image">
+                    <img id="user_img" src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/12923344_1166766580022458_1493336177519295152_n.jpg?oh=94e021c980af7a9806e7bd9ae856dbd7&oe=587FC964" alt="Upload Image">
                   </a>
-                  <p><b>Randy Weinberg</b></p>
+                  <span class="caption"><p><b>Hanson Zeng</b></p></span>
                 </div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <hr>
 
             <h3><b>Meals</b></h3><br>
             <div id="chefsmeals" class="panel panel-default">
-            <p><%- JSON.stringify(chefMeals) %></p>
+                <% for(var i=0; i<chefMeals.length;i++) { %>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2 inline">
+                                <img id="food_img" class="img-circle" src="<%-chefMeals[i].meal.Image %>" alt="image">
+                            </div>
+                            <div class="col-xs-8 inline" style="position: absolute;left: 31%;">
+                                <p5 class="txt0"><b><%- chefMeals[i].meal.Name %></b></p5><br>
+                                <% var x = chefMeals[i].meal.Location.split(",") %><br>
+                                <h6 class="txt"><%- x[0] %></h6>
+                            </div>
+                            <div class="col-xs-2 inline" style="position:absolute;right:15%">
+                                <span class="glyphicon glyphicon-edit inline" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove inline" aria-hidden="true"></span><br><br>
+                                <h6 class="txt2">$<%- chefMeals[i].meal.Price %></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <% if(i != chefMeals.length-1){ %>
+                     <hr>
+                    <% } %>
+                <% } %>
             </div>
 
         </div>
