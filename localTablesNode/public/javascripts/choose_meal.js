@@ -17,14 +17,14 @@ $(document).ready(function(){
 	  		var key = obj.key;
 		  	var html = '<a href="http://localhost:3000/meals/getMeal/' + key + '"><div class="panel-body" style="height:50px;">\
 						<div class="row" id="panel">\
-							<div class="col-xs-6 col-md-2">\
-								<img class="img-circle" src="' + obj.meal.Image + '"' + 'alt="Image" style="width:50px;height:50px;">\
+							<div class="col-xs-2">\
+								<img class="img-circle" src="' + obj.meal.Image + '"' + 'alt="Image" style="width:75px;height:75px;">\
 							</div>\
-							<div class="col-xs-6 col-md-2" style="position:absolute;right:40%">\
+							<div class="col-xs-8" style="position:absolute;right:11%">\
 								<p><b>' + obj.meal.Name + '</b></p>\
 								<p>' + obj.meal.Location + '<p>\
 							</div>\
-							<div class="col-xs-5 col-md-4" style="position:absolute;right:0%">\
+							<div class="col-xs-2" style="position:absolute;right:15%">\
 								<p>' + '$' + obj.meal.Price + '</p>\
 							</div>\
 						</div>\

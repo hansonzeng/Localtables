@@ -6,6 +6,13 @@ $('#confirm').click (function (e) {
    $('#alert').addClass('in'); // shows alert with Bootstrap CSS3 implem
 });
 
+$('#amount').blur(function (){    
+    this.value = parseFloat(this.value.replace(/,/g, ""))
+                    .toFixed(2)
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+
+
 $('#confirm').click(function() {
   putMeals();
 })

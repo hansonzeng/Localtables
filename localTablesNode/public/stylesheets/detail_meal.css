@@ -14,3 +14,9 @@
     display: block;
     width: 92%;
 }
+
+.thumbnail {
+	padding: 0px;
+}
+
+.inline { display: inline-block !important; }
