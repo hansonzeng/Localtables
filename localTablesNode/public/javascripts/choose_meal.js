@@ -1,10 +1,4 @@
 $(document).ready(function(){
-
-  $(".back_button").click(function() {
-    history.back(-1);
-  })
-
-  
   
   var getAllMeals = function(){	
 	  console.log("Getting all meals now");
@@ -37,7 +31,7 @@ $(document).ready(function(){
 					</div><hr></a>'
 
 	   $('#add').append(html);
-	    console.log(obj)
+	    // console.log(obj)
 	  });
 
 	}

@@ -1,121 +1,91 @@
 [{
 	"Name" : "Chicken Noodle Soup",
-	"Description" : "The best chicken soup ever",
-	"Location" : {
-		"State" : "PA",
-		"City" : "Pittsburgh",
-		"Street" : "4 Bayard Road"
-	},
+	"Description" : "This is a recipe that was given to me by my grandmother. It is a very savory and tasty soup and I believe that all will like it. If you would like to add even more flavor, try using smoked chicken!!",
+	"Location" : "4, Bayard Road, Pittsburgh, PA, 15213, United States",
 	"Price" : 5.00,
 	"CookingLesson" : false,
+	"PartySize" : 3,
 	"Image" : "https://goo.gl/yV2wUt"
 },
 {
-	"Name" : "Chicken Thai Salad",
+	"Name" : "This Chicken Thai Salad is unlike any you have ever tried. You will never want another boring salad when you try this one.",
 	"Description" : "The best salad ever, and SPICY",
-	"Location" : {
-		"State" : "PA",
-		"City" : "Pittsburgh",
-		"Street" : "6 Bayard Road"
-	},
+	"Location" : "6, Bayard Road, Pittsburgh, PA, 15213, United States",
 	"Price" : 10.00,
 	"CookingLesson" : false,
-	"Image" : "goo.gl/vBR95x"
+	"PartySize" : 4,
+	"Image" : "https://goo.gl/vBR95x"
 },
 {
 	"Name" : "Steam Mussels",
-	"Description" : "With Tomatoes, White wine and Herbs",
-	"Location" : {
-		"State" : "PA",
-		"City" : "Pittsburgh",
-		"Street" : "5000 Forbes Ave"
-	},
+	"Description" : "Mussels steamed in white wine and served in a sauce made from the cooking liquid with butter and shallots is a classic French preparation of mussels, moules mariniere.",
+	"Location" : "5000, Forbes Ave, Pittsburgh, PA, 15213, United States",
 	"Price" : 8.00,
 	"CookingLesson" : true,
+	"PartySize" : 5,
 	"Image" : "https://goo.gl/5ll5qv"	
 },
 {
 	"Name" : "Haluski",
 	"Description" : "Haluski is from Pittsburgh’s Polish heritage, haluski is a Polish specialty combining cabbage and noodles. Order it at the Bloomfield Bridge Tavern, aka “The Polish Party House.",
-	"Location" : {
-		"State" : "PA",
-		"City" : "Pittsburgh",
-		"Street" : "3000 Craft Ave"
-	},
+	"Location" : "3000, Craft Ave, Pittsburgh, PA, 15213, United States",
 	"Price" : 7.50,
 	"CookingLesson" : true,
+	"PartySize" : 2,
 	"Image" : "https://goo.gl/LoJw0r"	
 },
 {
 	"Name" : "Soupe à l'oignon",
 	"Description" : "This is a traditional soup made of onions and beef stock, served with croutons and melted cheese on top.",
-	"Location" : {
-		"State" : "NY",
-		"City" : "New York City",
-		"Street" : "5th Ave"
-	},
+	"Location" : "213, 5th Ave, New York City, NY, 10010, United States",
 	"Price" : 11.50,
 	"CookingLesson" : false,
+	"PartySize" : 19,
 	"Image" : "https://goo.gl/YXR4uh"	
 },
 {
 	"Name" : "Sirloin steak",
 	"Description" : "A sirloin steak dinner, served with sauteed onion, fries, broccoli, carrots, and snow peas, garnished with chives",
-	"Location" : {
-		"State" : "NY",
-		"City" : "New York City",
-		"Street" : "2th Ave"
-	},
+	"Location" : "200, 2th Ave, New York City, NY, 10010, United States",
 	"Price" : 11.50,
 	"CookingLesson" : true,
+	"PartySize" : 6,
 	"Image" : "https://goo.gl/d4sTzc"	
 },
 {
 	"Name" : "Apple pie",
 	"Description" : "Served with whipped cream or ice cream on top, or alongside cheddar cheese.",
-	"Location" : {
-		"State" : "PA",
-		"City" : "Pittsburgh",
-		"Street" : "Craig Street"
-	},
+	"Location" : "300, Craig Street, Pittsburgh, PA, 15213, United States",
 	"Price" : 6.50,
 	"CookingLesson" : false,
+	"PartySize" : 7,
 	"Image" : "https://goo.gl/xc1K5U"	
 },
 {
 	"Name" : "Eggs Benedict",
 	"Description" : "An American breakfast dish made with poached eggs and hollandaise sauce, served with Canadian bacon",
-	"Location" : {
-		"State" : "CA",
-		"City" : "San Francisco",
-		"Street" : "Castro Street"
-	},
+	"Location" : "200, Castro Street,San Francisco, CA, 94114, United States",
 	"Price" : 6.70,
 	"CookingLesson" : true,
+	"PartySize" : 8,
 	"Image" : "https://goo.gl/K7Mtj3"	
 },
 {
 	"Name" : "Crab cake",
 	"Description" : "A popular delicacy in Delaware, New Jersey and Maryland, it is served on a roll.",
-	"Location" : {
-		"State" : "NJ",
-		"City" : "Beckers",
-		"Street" : "315 Olivia"
-	},
+	"Location" : "315, Olivia Street,Beckers, NJ, 15136, United States",
 	"Price" : 12.50,
 	"CookingLesson" : true,
+	"PartySize" : 3,
 	"Image" : "https://goo.gl/KXYCS8"	
 },
 {
 	"Name" : "Shrimp Gumbo",
 	"Description" : "Onions, celery and green peppers, the \"holy trinity\" of both Creole and Cajun cooking, add flavor and substance to the thick shrimp and sausage stew, which is served over a heaping portion of white rice.",
-	"Location" : {
-		"State" : "LA",
-		"City" : "New Orleans",
-		"Street" : "325 Filmore Ave"
-	},
+	"Location" : "325, Filmore Ave, New Orleans, LA, 70124, United States",
 	"Price" : 11.50,
 	"CookingLesson" : true,
+	"PartySize" : 5,
 	"Image" : "https://goo.gl/pfYVy8"	
 }
 ]

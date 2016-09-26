@@ -1,10 +1,15 @@
 $(document).ready(function(){
 
-	console.log("payment.js loaded")
+	console.log("payment.js loaded");
+	console.log("LOADING******************PAYMENT.JS");
+
 	var token;
 
 	var payMeal = function(){
 		console.log("inside the paymeals function");
+
+		window.location.href = "./meals"
+
 		var x = document.getElementsByClassName("form-payment");
 		Stripe.card.createToken({
 	  	number: x[0].value,

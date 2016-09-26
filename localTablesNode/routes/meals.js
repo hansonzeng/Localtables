@@ -18,8 +18,6 @@ var putSeedData = function(){
 	}
 }
 
-putSeedData();
-
 /* CRUD meals into database. */
 
 router.put('/putMeal',function(req,res){
@@ -37,12 +35,12 @@ router.get('/getMeal/:mealID',function(req,res){
 	console.log('getting a meal*******************************************************************************');
 	var mealid = req.params.mealID;
 	var resultMeal;
-
 	var getMealRef = db.ref("meals/" + mealid);
+	console.log("before getting a specific meal ref");
 	getMealRef.once('value',function(snapshot){
 		resultMeal = snapshot.val();
+		res.render("detail_meal.ejs",{meal: resultMeal});
 	});
-    res.send(resultMeal);
 }); //RETRIEVE Specific One
 
 router.get('/getAllMeals',function(req,res){	
