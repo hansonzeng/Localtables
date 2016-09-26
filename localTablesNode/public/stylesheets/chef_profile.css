@@ -16,14 +16,33 @@ body {
   font-family: sans-serif;
 }
 
-img {
-    vertical-align: middle;
-    width: 267px;
-    height: 140px;
-    position: absolute;
-    right: 15%;
-    bottom: 65%;
+.panel {
+  border: 0px;
+  webkit-box-shadow: 0px;
+  box-shadow: 0 0px 0px rgba(0,0,0,0);
 }
+
+#user_img {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 23%;
+    bottom: 61%;
+}
+
+#block {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+.caption {
+    display: block;
+}
+
+.inline { display: inline-block !important; }
 
 p {
 	position: absolute;
@@ -31,5 +50,15 @@ p {
     height: 140px;
     position: absolute;
     right: 29%;
-    top: 38%;
+    top: 40%;
+}
+
+.col-xs-6 {
+    width: 36%;
+    padding-left: 25px;
+}
+
+.col-xs-5 {
+    width: 29.666667%;
+    padding-top: 30px;
 }
