@@ -37,12 +37,12 @@
             <br>
             <div class="row">
                 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                <%= meal.Location.Street %>
+                <%= meal.Location %>
             </div>
             <br>
             <div class="row">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                This meal is for a party of 2
+                This meal is for a party of <%= meal.PartySize%>
             </div>
             <br><br>
             <div class="row">

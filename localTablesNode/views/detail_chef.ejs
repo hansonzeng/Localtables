@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="stylesheets/chef_profile.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../../stylesheets/chef_profile.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
         <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
@@ -36,13 +36,14 @@
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br>
             <hr>
+
             <h3><b>Meals</b></h3><br>
             <div id="chefsmeals" class="panel panel-default">
-            
+            <p><%- JSON.stringify(chefMeals) %></p>
             </div>
 
         </div>
-
+        <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
 
         <script>
           // Initialize Firebase
@@ -54,9 +55,10 @@
           };
           firebase.initializeApp(config);
         </script>
-        <script src="javascripts/auth.js"></script>
-        <script src="javascripts/meals.js"></script>
-        <script src="javascripts/form.js"></script>
-        <script src="javascripts/payment.js"></script>
+        <script src="../../javascripts/auth.js"></script>
+        <script src="../../javascripts/meals.js"></script>
+        <script src="../../javascripts/chef_meals.js"></script>
+        <script src="../../javascripts/form.js"></script>
+        <script src="../../javascripts/payment.js"></script>
     </body>
 </html>

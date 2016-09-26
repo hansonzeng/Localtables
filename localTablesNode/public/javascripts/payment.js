@@ -10,7 +10,7 @@ $(document).ready(function(){
 	var payMeal = function(){
 		console.log("inside the paymeals function");
 
-		window.location.href = "./meals"
+		window.location.href = "../../meals"
 
 		var x = document.getElementsByClassName("form-payment");
 		Stripe.card.createToken({

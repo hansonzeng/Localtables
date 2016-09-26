@@ -18,6 +18,8 @@ var putSeedData = function(){
 	}
 }
 
+// putSeedData();
+
 /* CRUD meals into database. */
 
 router.put('/putMeal',function(req,res){

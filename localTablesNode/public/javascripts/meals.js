@@ -1,14 +1,16 @@
 $(document).ready(function(){
 
 
+$('#confirm').click (function (e) {
+   e.preventDefault(); //will stop the link href to call the blog page
+   $('#alert').addClass('in'); // shows alert with Bootstrap CSS3 implem
+});
+
 $('#confirm').click(function() {
   putMeals();
-
 })
 
-var mealIDTest = "-KSDCc1zyKs7YfJAiQK-";
-//FUNCTIONS ONLY FOR TESTING PURPOSES CRUD FOR MEALS; Should run these
-//once user logged into the system
+//Function here puts meal and also redirects to detail chef page
 var putMeals = function(){
 
   var x = document.getElementsByClassName("form-control");
@@ -44,6 +46,10 @@ var putMeals = function(){
         console.log(result);
       }
     });
+
+   setTimeout(function () {
+       window.location.href = "./chefs/getChefMeals/" + uid; //will redirect to your blog page (an ex: blog.html)
+    }, 1000); //will call the function after 2 secs.
 
 }
 

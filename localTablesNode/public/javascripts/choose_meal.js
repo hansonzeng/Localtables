@@ -22,7 +22,7 @@ $(document).ready(function(){
 							</div>\
 							<div class="col-xs-6 col-md-2" style="position:absolute;right:40%">\
 								<p><b>' + obj.meal.Name + '</b></p>\
-								<p>' + obj.meal.Location.Street + '<p>\
+								<p>' + obj.meal.Location + '<p>\
 							</div>\
 							<div class="col-xs-5 col-md-4" style="position:absolute;right:0%">\
 								<p>' + '$' + obj.meal.Price + '</p>\

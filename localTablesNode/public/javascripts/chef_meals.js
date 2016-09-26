@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-  
+  console.log("we are here in chef_meals.js")
+
   var getChefMeals = function(){	
 	  console.log("Getting chef meals now");
 	  var chefMeals;
@@ -34,9 +35,6 @@ $(document).ready(function(){
 	   $('#add').append(html);
 	    console.log(obj)
 	  });
-
 	}
-
-	getAllMeals();
 
 });
