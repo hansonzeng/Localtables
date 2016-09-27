@@ -134,9 +134,10 @@
                 <label for="card_number">Full Name on Card</label><br>
                 <input type="text" class="" id="card_holder_name" placeholder="Jon Doe">
               </div>
-              <a href="#foooo">
-                <button style="border-radius:20px;" type="submit" id="pay-meal" data-dismiss="modal" class="btn btn-success btn-lg btn-block">Complete Transaction</button>
-              </a>
+              <form>
+                <a href="../meals">
+                  <button style="border-radius:20px;" type="submit" id="pay-meal" data-dismiss="modal" class="btn btn-success btn-lg btn-block">Complete Transaction </button>
+                </a>
             </form>
           </div>
         </div>
@@ -144,9 +145,7 @@
     </div>
         <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
         <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-        <script type="text/javascript">
-          Stripe.setPublishableKey('pk_test_TK18ZwUnK2CT1Wmof8WsQl8S');
-        </script>
+        <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
         <script>
           // Initialize Firebase
           var config = {

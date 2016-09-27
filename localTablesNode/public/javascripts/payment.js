@@ -7,10 +7,19 @@ $(document).ready(function(){
 	var price = parseFloat($("#price_meal").text().slice(1,5))*100
 	var name = $("#name_meal").text()
 
+	Stripe.setPublishableKey('pk_test_TK18ZwUnK2CT1Wmof8WsQl8S');
+
 	var payMeal = function(){
 		console.log("inside the paymeals function");
 
 		var x = document.getElementsByClassName("form-payment");
+
+		console.log("Number is " + x[0].value)
+		console.log("CVC is " + x[1].value)
+		console.log("Exp_Month is " + x[2].value)
+		console.log("Exp_Year is " + x[3].value)
+		console.log("The Stripe Object is",Stripe)
+
 		Stripe.card.createToken({
 	  	number: x[0].value,
 	  	cvc: x[1].value,
@@ -18,11 +27,13 @@ $(document).ready(function(){
   		exp_year: x[3].value
   		}, stripeResponseHandler)
 
-		window.location.href = "../../meals"
+		// window.location.href = "../../meals"
 	};
 
 	var stripeResponseHandler = function(status, response){
+		console.log("IM IN THE RESPONSE HANDLER!!!!+++++***")
 		if(response.error){
+			console.log("THERE IS AN ERROR!!***")
 			console.log(response);
 		}
 		else{
