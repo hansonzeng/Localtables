@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 	  allMeals.forEach(function(obj){
 	  		var key = obj.key;
-		  	var html = '<a href="http://localhost:3000/meals/getMeal/' + key + '"><div class="panel-body" style="height:50px;">\
+		  	var html = '<a href="./meals/getMeal/' + key + '"><div class="panel-body" style="height:50px;">\
 						<div class="row" id="panel">\
 							<div class="col-xs-2">\
 								<img class="img-circle" src="' + obj.meal.Image + '"' + 'alt="Image" style="width:75px;height:75px;">\
