@@ -19,7 +19,7 @@
 
         <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(51,51,51,0.78)">
           <div class="container">
-            <i id="back_button" onclick="history.back(-1)" class="fa fa-angle-left" style="font-size:48px;color:white;position:absolute;top:0%;left:4%"></i>
+            <i id="back_button" onclick="window.location.href='../../chefGuest'" class="fa fa-angle-left" style="font-size:48px;color:white;position:absolute;top:0%;left:4%"></i>
             <h4>Chef Profile</h4>
           </div>
         </nav>
@@ -51,8 +51,8 @@
                                 <h6 class="txt"><%- x[0] %></h6>
                             </div>
                             <div class="col-xs-2 inline" style="position:absolute;right:15%">
-                                <span class="glyphicon glyphicon-edit inline" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-remove inline" aria-hidden="true"></span><br><br>
+                                <span id="edit" class="glyphicon glyphicon-edit inline" aria-hidden="true"></span>
+                                <span id="delete" class="glyphicon glyphicon-remove inline" aria-hidden="true"></span><br><br>
                                 <h6 class="txt2">$<%- chefMeals[i].meal.Price %></h6>
                             </div>
                         </div>

@@ -15,8 +15,15 @@ $('#amount').blur(function (){
 
 $('#confirm').click(function() {
   putMeals();
-})
+});
 
+$('#edit').click(function() {
+  postMeals(this);
+});
+
+$('#delete').click(function() {
+  deleteMeals(this);
+});
 //Function here puts meal and also redirects to detail chef page
 var putMeals = function(){
 
@@ -120,8 +127,8 @@ var postMeals = function(){
 }
 
 //delete the whole meal
-var deleteMeals = function(){
-
+var deleteMeals = function(obj) {
+  console.log(this);
   var mealid = mealIDTest;
 
   $.ajax({
