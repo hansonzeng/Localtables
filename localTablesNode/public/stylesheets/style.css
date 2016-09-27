@@ -16,6 +16,15 @@ p {
 	padding-left: 5%;
 }
 
+#video_overlays {
+    position: absolute;
+    float: left;
+    width: 640px;
+    min-height: 697px;
+    background-color: #000000;
+    z-index: 300000;
+    opacity: 0.4;
+}
 
 .videoBgWrapper {
     position: fixed;
