@@ -10,15 +10,16 @@ $(document).ready(function(){
 	var payMeal = function(){
 		console.log("inside the paymeals function");
 
-		window.location.href = "../../meals"
-
 		var x = document.getElementsByClassName("form-payment");
 		Stripe.card.createToken({
 	  	number: x[0].value,
 	  	cvc: x[1].value,
 	  	exp_month: x[2].value,
   		exp_year: x[3].value
-  }, stripeResponseHandler)};
+  		}, stripeResponseHandler)
+
+		window.location.href = "../../meals"
+	};
 
 	var stripeResponseHandler = function(status, response){
 		if(response.error){

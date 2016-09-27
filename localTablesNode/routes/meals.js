@@ -18,7 +18,7 @@ var putSeedData = function(){
 	}
 }
 
-// putSeedData();
+putSeedData();
 
 /* CRUD meals into database. */
 

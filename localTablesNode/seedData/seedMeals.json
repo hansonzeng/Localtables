@@ -4,7 +4,7 @@
 	"Location" : "4, Bayard Road, Pittsburgh, PA, 15213, United States",
 	"Price" : 5.00,
 	"CookingLesson" : false,
-	"PartySize" : 3,
+	"Party" : 3,
 	"Image" : "https://goo.gl/yV2wUt"
 },
 {
@@ -13,7 +13,7 @@
 	"Location" : "6, Bayard Road, Pittsburgh, PA, 15213, United States",
 	"Price" : 10.00,
 	"CookingLesson" : false,
-	"PartySize" : 4,
+	"Party" : 4,
 	"Image" : "https://goo.gl/vBR95x"
 },
 {
@@ -22,7 +22,7 @@
 	"Location" : "5000, Forbes Ave, Pittsburgh, PA, 15213, United States",
 	"Price" : 8.00,
 	"CookingLesson" : true,
-	"PartySize" : 5,
+	"Party" : 5,
 	"Image" : "https://goo.gl/5ll5qv"	
 },
 {
@@ -31,7 +31,7 @@
 	"Location" : "3000, Craft Ave, Pittsburgh, PA, 15213, United States",
 	"Price" : 7.50,
 	"CookingLesson" : true,
-	"PartySize" : 2,
+	"Party" : 2,
 	"Image" : "https://goo.gl/LoJw0r"	
 },
 {
@@ -40,7 +40,7 @@
 	"Location" : "213, 5th Ave, New York City, NY, 10010, United States",
 	"Price" : 11.50,
 	"CookingLesson" : false,
-	"PartySize" : 19,
+	"Party" : 19,
 	"Image" : "https://goo.gl/YXR4uh"	
 },
 {
@@ -49,7 +49,7 @@
 	"Location" : "200, 2th Ave, New York City, NY, 10010, United States",
 	"Price" : 11.50,
 	"CookingLesson" : true,
-	"PartySize" : 6,
+	"Party" : 6,
 	"Image" : "https://goo.gl/d4sTzc"	
 },
 {
@@ -58,7 +58,7 @@
 	"Location" : "300, Craig Street, Pittsburgh, PA, 15213, United States",
 	"Price" : 6.50,
 	"CookingLesson" : false,
-	"PartySize" : 7,
+	"Party" : 7,
 	"Image" : "https://goo.gl/xc1K5U"	
 },
 {
@@ -67,7 +67,7 @@
 	"Location" : "200, Castro Street,San Francisco, CA, 94114, United States",
 	"Price" : 6.70,
 	"CookingLesson" : true,
-	"PartySize" : 8,
+	"Party" : 8,
 	"Image" : "https://goo.gl/K7Mtj3"	
 },
 {
@@ -76,7 +76,7 @@
 	"Location" : "315, Olivia Street,Beckers, NJ, 15136, United States",
 	"Price" : 12.50,
 	"CookingLesson" : true,
-	"PartySize" : 3,
+	"Party" : 3,
 	"Image" : "https://goo.gl/KXYCS8"	
 },
 {
@@ -85,7 +85,7 @@
 	"Location" : "325, Filmore Ave, New Orleans, LA, 70124, United States",
 	"Price" : 11.50,
 	"CookingLesson" : true,
-	"PartySize" : 5,
+	"Party" : 5,
 	"Image" : "https://goo.gl/pfYVy8"	
 }
 ]
