@@ -14,6 +14,11 @@ router.post('/processPayments', function(req, res, next) {
   var token = req.body.stripeToken;
   var price = req.body.mealPrice;
   var name = req.body.mealName;
+  var cookLesson = req.body.cookLesson;
+
+  if(cookLesson){
+  	price = price + 500;
+  }
 
   var charge = stripe.charges.create({
   amount: price, // Amount in cents

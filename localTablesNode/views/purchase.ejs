@@ -134,11 +134,24 @@
                 <label for="card_number">Full Name on Card</label><br>
                 <input type="text" class="" id="card_holder_name" placeholder="Jon Doe">
               </div>
+              <% if (meal.CookingLesson){%>
+                <div class="checkbox">
+                    <label>
+                      <input id="cookingLessons" class="form-payment" type="checkbox"> Check this to take cooking lessons (+$5.00)
+                    </label>
+                </div>
+              <% } %>
               <form>
                 <a href="../meals">
                   <button style="border-radius:20px;" type="submit" id="pay-meal" data-dismiss="modal" class="btn btn-success btn-lg btn-block">Complete Transaction </button>
                 </a>
             </form>
+
+            <div id="alert" style="position: fixed;top: 0;left: 0;width: 100%;" class="alert alert-success alert-block alert-dismissible fade" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="position: absolute;right: 28px;">&times;</span></button>
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;Success!!</strong>Your Payment has gone through!!
+            </div>
+
           </div>
         </div>
       </div>

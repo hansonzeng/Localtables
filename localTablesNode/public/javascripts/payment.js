@@ -3,9 +3,15 @@ $(document).ready(function(){
 	console.log("payment.js loaded");
 	console.log("LOADING******************PAYMENT.JS");
 
+	$('#confirm').click (function (e) {
+	   e.preventDefault(); //will stop the link href to call the blog page
+	   $('#alert').addClass('in'); // shows alert with Bootstrap CSS3 implem
+	});
+
 	var token;
 	var price = parseFloat($("#price_meal").text().slice(1,5))*100
 	var name = $("#name_meal").text()
+	var cookLesson = false;
 
 	Stripe.setPublishableKey('pk_test_TK18ZwUnK2CT1Wmof8WsQl8S');
 
@@ -18,7 +24,12 @@ $(document).ready(function(){
 		console.log("CVC is " + x[1].value)
 		console.log("Exp_Month is " + x[2].value)
 		console.log("Exp_Year is " + x[3].value)
+		console.log("Cooking lessons is " + x[4].checked)
 		console.log("The Stripe Object is",Stripe)
+
+		if(x.length == 5){
+			cookLesson = x[4].checked;
+		}
 
 		Stripe.card.createToken({
 	  	number: x[0].value,
@@ -27,7 +38,6 @@ $(document).ready(function(){
   		exp_year: x[3].value
   		}, stripeResponseHandler)
 
-		// window.location.href = "../../meals"
 	};
 
 	var stripeResponseHandler = function(status, response){
@@ -51,7 +61,7 @@ $(document).ready(function(){
 	      type: 'POST',
 	      dataType: "json",
 	      contentType: "application/json",
-	      data: JSON.stringify({stripeToken : token, mealPrice: price, mealName: name}),
+	      data: JSON.stringify({stripeToken : token, mealPrice: price, mealName: name, cookLesson: cookLesson}),
 	      success:function(result){
 	        alert(result);
 	      }
