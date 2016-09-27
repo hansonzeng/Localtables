@@ -72,104 +72,108 @@
             </form>
         </div>
 
-        <!-- Trigger the modal with a button -->
-<!--     <button type="button" id="trigger-pay" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#myModal">Let's Eat</button> -->
-
     <!-- Modal -->
       <div id="myModal" class="modal fade" style="position:absolute;" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header" style="background-color:deepskyblue">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <span style="color:white" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-            <p2 class="modal-title" style="color:white">This is a secure SSL Encrypted payment.</p2>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="card_number">Card Number</label><br>
-                <input type="text" class="form-payment" id="dish_name" placeholder="4242424242424242">
-              </div>
-              <div class="form-group">
-                <label for="card_number">CVC</label><br>
-                <input type="text" class="form-payment" id="dish_name" placeholder="123">
-              </div>
-              <div class="form-group">
-                <label for="month_sel">Exp Month</label>
-                <select class="form-payment" id="month_sel">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                  <option>11</option>
-                  <option>12</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="year_sel">Exp Year</label>
-                <select class="form-payment" id="year_sel">
-                  <option>2017</option>
-                  <option>2018</option>
-                  <option>2019</option>
-                  <option>2020</option>
-                  <option>2021</option>
-                  <option>2022</option>
-                  <option>2023</option>
-                  <option>2024</option>
-                  <option>2025</option>
-                  <option>2026</option>
-                  <option>2027</option>
-                  <option>2028</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="card_number">Full Name on Card</label><br>
-                <input type="text" class="" id="card_holder_name" placeholder="Jon Doe">
-              </div>
-              <% if (meal.CookingLesson){%>
-                <div class="checkbox">
-                    <label>
-                      <input id="cookingLessons" class="form-payment" type="checkbox"> Check this to take cooking lessons (+$5.00)
-                    </label>
-                </div>
-              <% } %>
+        
+        <div class="modal-dialog">
+          <div class="modal-content">
+            
+            <div class="modal-header" style="background-color:deepskyblue">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <span style="color:white" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+              <p2 class="modal-title" style="color:white">This is a secure SSL Encrypted payment.</p2>
+            </div>
+            
+            <div class="modal-body">
               <form>
-                <a href="../meals">
+                
+                <div class="form-group">
+                  <label for="card_number">Card Number</label><br>
+                  <input type="text" class="form-payment" id="dish_name" placeholder="4242424242424242">
+                </div>
+                <div class="form-group">
+                  <label for="card_number">CVC</label><br>
+                  <input type="text" class="form-payment" id="dish_name" placeholder="123">
+                </div>
+                
+                <div class="form-group">
+                  <label for="month_sel">Exp Month</label>
+                  <select class="form-payment" id="month_sel">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="year_sel">Exp Year</label>
+                  <select class="form-payment" id="year_sel">
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="card_number">Full Name on Card</label><br>
+                  <input type="text" class="" id="card_holder_name" placeholder="Jon Doe">
+                </div>
+                
+                <% if (meal.CookingLesson){%>
+                  <div class="checkbox">
+                      <label>
+                        <input id="cookingLessons" class="form-payment" type="checkbox"> Check this to take cooking lessons (+$5.00)
+                      </label>
+                  </div>
+                <% } %>
+                
+                <form>
                   <button style="border-radius:20px;" type="submit" id="pay-meal" data-dismiss="modal" class="btn btn-success btn-lg btn-block">Complete Transaction </button>
-                </a>
-            </form>
-
-            <div id="alert" style="position: fixed;top: 0;left: 0;width: 100%;" class="alert alert-success alert-block alert-dismissible fade" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="position: absolute;right: 28px;">&times;</span></button>
-              <strong>&nbsp;&nbsp;&nbsp;&nbsp;Success!!</strong>Your Payment has gone through!!
+                </form>
+              </form>
             </div>
 
           </div>
         </div>
       </div>
-    </div>
-        <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
-        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-        <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
-            authDomain: "localtables-28928.firebaseapp.com",
-            databaseURL: "https://localtables-28928.firebaseio.com",
-            storageBucket: "localtables-28928.appspot.com",
-          };
-          firebase.initializeApp(config);
-        </script>
-        <script src="../../javascripts/meals.js"></script>
-        <script src="../../javascripts/payment.js"></script>
+
+      <div id="alert" style="position: fixed;top: 50px;left: 0;width: 100%;" class="alert alert-success alert-block alert-dismissible fade" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="position: absolute;">&times;</span></button>
+        <p8 style="position: absolute;top: 35px;font-size:15px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Success!!</strong>Your Payment has gone through!!<p8>
+      </div>
+        
+      <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/stripe-debug.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyD5zq2uo3qneLzBxKoyDdqXCQcOQ6GTvAA",
+          authDomain: "localtables-28928.firebaseapp.com",
+          databaseURL: "https://localtables-28928.firebaseio.com",
+          storageBucket: "localtables-28928.appspot.com",
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="../../javascripts/meals.js"></script>
+      <script src="../../javascripts/payment.js"></script>
     </body>
 </html>

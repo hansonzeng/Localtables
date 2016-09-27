@@ -3,9 +3,12 @@ $(document).ready(function(){
 	console.log("payment.js loaded");
 	console.log("LOADING******************PAYMENT.JS");
 
-	$('#confirm').click (function (e) {
-	   e.preventDefault(); //will stop the link href to call the blog page
-	   $('#alert').addClass('in'); // shows alert with Bootstrap CSS3 implem
+	$('#pay-meal').click (function (e) {
+		console.log("in here")
+		$('#alert').addClass('in');
+		setTimeout(function () {
+	       	window.location.href = "../../meals" 
+	    }, 1000); //will call the function after 2 secs.
 	});
 
 	var token;
@@ -24,7 +27,6 @@ $(document).ready(function(){
 		console.log("CVC is " + x[1].value)
 		console.log("Exp_Month is " + x[2].value)
 		console.log("Exp_Year is " + x[3].value)
-		console.log("Cooking lessons is " + x[4].checked)
 		console.log("The Stripe Object is",Stripe)
 
 		if(x.length == 5){
